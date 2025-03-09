@@ -2,14 +2,17 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 class CustomUser(AbstractUser):
-    ROLE_CHOICES = (
-        ('resident', 'Resident'),
-        ('admin', 'Admin'),
+    groups = models.ManyToManyField(
+        'auth.Group',
+        related_name='customuser_groups',  # Change this to a unique name
+        blank=True
     )
-    role = models.CharField(max_length=10, choices=ROLE_CHOICES, default='resident')
+    user_permissions = models.ManyToManyField(
+        'auth.Permission',
+        related_name='customuser_permissions',  # Change this to a unique name
+        blank=True
+    )
 
-    def __str__(self):
-        return self.username
 
 
 class Resident(models.Model):
