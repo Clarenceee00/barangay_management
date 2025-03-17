@@ -10,6 +10,7 @@ import BarangayClearance from "./components/pages/doc/BarangayClearance";
 import ResidencyForm from "./components/pages/doc/ResidencyForm";
 import Sidebar from "./Admin/COM/Sidevar/Sidebar.jsx";
 import Project from "./Admin/Modules/Project.jsx";
+import OfficialsTable from "./Admin/Barangayofficials/OfficialsTable.jsx";
 
 
 
@@ -30,8 +31,8 @@ function App() {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/Sidebar" element={<Sidebar />} />
         <Route path="/project" element={<Project />} />
-        
-        
+       <Route path="/Official" element={<OfficialsTable/>} />
+ 
         
         <Route path="/resident-information" element={<h1>Resident Information</h1>} />
         <Route path="/barangay-certificate" element={<h1>Barangay Certificate</h1>} />
@@ -39,9 +40,8 @@ function App() {
         <Route path="/barangay-permit" element={<h1>Barangay Permit</h1>} />
         <Route path="/blotter-records" element={<h1>Blotter Records</h1>} />
         <Route path="/system-settings" element={<h1>System Settings</h1>} />
-      </Routes>
+      </Routes>   
 
-      
       
       </>
   );
