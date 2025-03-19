@@ -11,6 +11,8 @@ import ResidencyForm from "./components/pages/doc/ResidencyForm";
 import Sidebar from "./Admin/COM/Sidevar/Sidebar.jsx";
 import Project from "./Admin/Modules/Project.jsx";
 import OfficialsTable from "./Admin/Barangayofficials/OfficialsTable.jsx";
+import IndigencyForm from "./components/pages/doc/IndigencyForm.jsx";
+import OffSignUpForm from "./Admin/Barangayofficials/OfficialForm.jsx";
 
 
 
@@ -25,6 +27,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/certification" element={<Certification />} />
         <Route path="/job-seeker-oath" element={<JobSeekerOath />} />
+        <Route path="/indigency" element={<IndigencyForm/>} />
         <Route path="/scholarship-form" element={<ScholarshipForm />} />
         <Route path="/barangay-clearance" element={<BarangayClearance />} />
         <Route path="/residency-form" element={<ResidencyForm />} />
@@ -32,6 +35,8 @@ function App() {
         <Route path="/Sidebar" element={<Sidebar />} />
         <Route path="/project" element={<Project />} />
        <Route path="/Official" element={<OfficialsTable/>} />
+       <Route path="/offForm" element={< OffSignUpForm/>} />
+       
  
         
         <Route path="/resident-information" element={<h1>Resident Information</h1>} />

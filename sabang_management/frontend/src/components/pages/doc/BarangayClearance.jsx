@@ -1,4 +1,4 @@
-
+import BackButton from "../../Back/Back";
 import "./Style/Design.css"
 
 function BarangayClearance({ onClick = "Submit" }) {
@@ -13,7 +13,9 @@ function BarangayClearance({ onClick = "Submit" }) {
     <button className="submit-button" onClick={onClick}>
            Submit
     </button>
+    <BackButton />
       </div>
+      
     );
   }
   

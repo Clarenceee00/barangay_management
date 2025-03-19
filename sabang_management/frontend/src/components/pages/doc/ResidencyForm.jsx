@@ -1,3 +1,5 @@
+import BackButton from "../../Back/Back";
+
 function ResidencyForm({ onClick = "Submit" }) {
     return (
       <div className="form-container">
@@ -11,6 +13,7 @@ function ResidencyForm({ onClick = "Submit" }) {
         <button className="submit-button" onClick={onClick}>
            Submit
            </button>
+           <BackButton />
       </div>
     );
   }

@@ -1,46 +1,65 @@
-.table-container {
-    width: 100%;
-    overflow-x: auto; /* Para sa responsive design */
+.Official {
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 80px;
+    left: 600px
+}
+
+.Head {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.Head{
-    font-size: 50px;
+    background: white;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 th, td {
-    padding: 12px;
+    border: 1px solid #ddd;
+    padding: 10px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
-    vertical-align: top; /* or 'center' */
 }
-
 
 th {
-    background-color: #f4f4f4;
+    background-color: #007bff;
+    color: white;
 }
 
-button {
-    padding: 8px 16px;
-    margin: 5px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+td button {
+    background-color: #28a745;
+    margin-right: 5px;
 }
-.Official{
-    width: 100%;
-    max-width: 1200px; 
-    margin: auto;
-    padding: 20px;
-    position: relative;
-    top: -250px;
+
+td button:last-child {
+    background-color: #dc3545;
+}
+
+td button:hover {
+    opacity: 0.8;
 }

@@ -1,4 +1,5 @@
 import "./Style/Design.css"
+import BackButton from "../../Back/Back";
 
 function JobSeekerOath({ onClick= "Submit" }) {
     return (
@@ -15,6 +16,7 @@ function JobSeekerOath({ onClick= "Submit" }) {
     <button className="submit-button" onClick={onClick}>
            Submit
     </button>
+    <BackButton />
       </div>
     );
   }
