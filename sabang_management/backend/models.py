@@ -81,3 +81,30 @@ class Indigency(models.Model):
 
     def __str__(self):
         return f"{self.name} ({'Male' if self.is_male else 'Female'})"
+
+
+class Project(models.Model):
+    STATUS_CHOICES = [
+        ('O', 'Ongoing'),
+        ('C', 'Completed'),
+        ('U', 'Upcoming'),
+    ]
+
+    project_name = models.CharField(max_length=100)
+    status = models.CharField(max_length=1, choices=STATUS_CHOICES)
+    project_picture = models.ImageField(upload_to='project_pics/')
+
+    def __str__(self):
+        return f"{self.project_name} ({self.get_status_display()})"
+
+
+class BarangayOfficials(models.Model):
+    position = models.CharField(max_length=50)
+    name = models.CharField(max_length=50)
+    contact_number = models.CharField(max_length=11)
+    address = models.CharField(max_length=100)
+    term_start = models.DateField()
+    term_end = models.DateField()
+
+    def __str__(self):
+        return f"{self.name} the barangay {self.position}"
