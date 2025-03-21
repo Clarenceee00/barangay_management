@@ -69,5 +69,4 @@ const OfficialsTable = () => {
     </>
   );
 };
-
 export default OfficialsTable;

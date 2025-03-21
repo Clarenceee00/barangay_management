@@ -1,39 +1,88 @@
 import React, { useState } from 'react';
+import '../../AdminStyle/Project.css'
+import Sidebar from '../../COM/Sidevar/Sidebar';
 
 const ProjectUpload = () => {
   const [projectName, setProjectName] = useState('');
   const [projectStatus, setProjectStatus] = useState('Ongoing');
+  const [projectImage, setProjectImage] = useState(null); // State to hold the uploaded image
+  const [projects, setProjects] = useState([]); // State to hold the list of projects
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setProjectImage(reader.result); // Set the image as a base64 string
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Dito mo ilalagay ang logic para sa pag-upload ng proyekto
-    console.log('Project Uploaded:', { projectName, projectStatus });
+    
+    // Create a new project object
+    const newProject = {
+      name: projectName,
+      status: projectStatus,
+      image: projectImage, // Include the image in the project object
+    };
+
+    // Add the new project to the projects array
+    setProjects([...projects, newProject]);
+
     // Reset form
     setProjectName('');
     setProjectStatus('Ongoing');
+    setProjectImage(null); // Reset the image
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Upload Project</h2>
-      <input
-        type="text"
-        placeholder="Project Name"
-        value={projectName}
-        onChange={(e) => setProjectName(e.target.value)}
-        required
-      />
-      <select
-        value={projectStatus}
-        onChange={(e) => setProjectStatus(e.target.value)}
-      >
-        <option value="Ongoing">Ongoing</option>
-        <option value="Completed">Completed</option>
-        <option value="Upcoming">Upcoming</option>
-      </select>
-      <input type="file" name="file"></input>
-      <button type="submit">Upload</button>
-    </form>
+<>
+    <Sidebar />
+    <div className='dashboard'>
+      <form onSubmit={handleSubmit}>
+        <h2>Upload Project</h2>
+        <input
+          type="text"
+          placeholder="Project Name"
+          value={projectName}
+          onChange={(e) => setProjectName(e.target.value)}
+          required
+        />
+        <select
+          value={projectStatus}
+          onChange={(e) => setProjectStatus(e.target.value)}
+        >
+          <option value="Ongoing">Ongoing</option>
+          <option value="Completed">Completed</option>
+          <option value="Upcoming">Upcoming</option>
+        </select>
+        <input 
+          type="file" 
+          name="file" 
+          accept="image/*" 
+          onChange={handleImageChange} 
+        />
+        <button type="submit">Upload</button>
+      </form>
+
+      <h2>Uploaded Projects</h2>
+      <ul>
+        {projects.length === 0 ? (
+          <li>Walang na-upload na proyekto.</li>
+        ) : (
+          projects.map((project, index) => (
+            <li key={index}>
+              <h3>{project.name} - {project.status}</h3>
+              {project.image && <img src={project.image} alt={project.name} style={{ width: '100px', height: '100px', objectFit: 'cover' }} />}
+            </li>
+          ))
+        )}
+      </ul>
+    </div>
+    </>
   );
 };
 

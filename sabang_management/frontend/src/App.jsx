@@ -9,11 +9,11 @@ import ScholarshipForm from "./components/pages/doc/ScholarshipForm";
 import BarangayClearance from "./components/pages/doc/BarangayClearance";
 import ResidencyForm from "./components/pages/doc/ResidencyForm";
 import Sidebar from "./Admin/COM/Sidevar/Sidebar.jsx";
-import Project from "./Admin/Modules/Project.jsx";
+import ProjectUpload from "./Admin/Modules/ProjectUpload/ProjectUpload.jsx";
 import OfficialsTable from "./Admin/Barangayofficials/OfficialsTable.jsx";
 import IndigencyForm from "./components/pages/doc/IndigencyForm.jsx";
 import OffSignUpForm from "./Admin/Barangayofficials/OfficialForm.jsx";
-
+import BarangayCert from "./Admin/BarangayCertificateForm/BarangayCert.jsx"
 
 
 
@@ -33,9 +33,10 @@ function App() {
         <Route path="/residency-form" element={<ResidencyForm />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/Sidebar" element={<Sidebar />} />
-        <Route path="/project" element={<Project />} />
+        <Route path="/project" element={<ProjectUpload />} />
        <Route path="/Official" element={<OfficialsTable/>} />
        <Route path="/offForm" element={< OffSignUpForm/>} />
+       <Route path="/barangaycert" element={< BarangayCert/>} />
        
  
         

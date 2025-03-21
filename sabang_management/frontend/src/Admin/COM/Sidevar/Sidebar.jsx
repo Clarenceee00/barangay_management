@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Sidebar.css"; 
 
+
 const Sidebar = () => {
   return (
     <div className="sidebar">
@@ -11,7 +12,7 @@ const Sidebar = () => {
       <ul>
          <li><Link to="">DashBoard</Link></li>
         <li><Link to="">Resident Information</Link></li>
-        <li><Link to="">Barangay Certificate</Link></li>
+        <li><Link to="/barangaycert">Barangay Certificate</Link></li>
         <li><Link to="/project">Project</Link></li>
         <li><Link to="/official">Barangay Officer</Link></li>
        
