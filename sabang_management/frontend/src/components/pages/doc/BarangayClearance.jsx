@@ -4,7 +4,6 @@ import "./Style/Design.css"
 function BarangayClearance({ onClick = "Submit" }) {
     return (
       <div className="form-container">
-        <img src="../../../assets/Icon.jpg" />
         <h2>Barangay Clearance</h2>
         <label>Name: <input type="text" /></label>
         <label>Birthday: <input type="date" /></label>

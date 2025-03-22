@@ -14,6 +14,7 @@ import OfficialsTable from "./Admin/Barangayofficials/OfficialsTable.jsx";
 import IndigencyForm from "./components/pages/doc/IndigencyForm.jsx";
 import OffSignUpForm from "./Admin/Barangayofficials/OfficialForm.jsx";
 import BarangayCert from "./Admin/BarangayCertificateForm/BarangayCert.jsx"
+import Dashboard from "./Admin/DASHBOARD/Dashboard.jsx"
 
 
 
@@ -37,6 +38,7 @@ function App() {
        <Route path="/Official" element={<OfficialsTable/>} />
        <Route path="/offForm" element={< OffSignUpForm/>} />
        <Route path="/barangaycert" element={< BarangayCert/>} />
+       <Route path="/dashboard" element={<Dashboard/>} />
        
  
         
