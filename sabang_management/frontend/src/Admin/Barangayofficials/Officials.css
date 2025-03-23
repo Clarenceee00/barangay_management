@@ -1,13 +1,13 @@
 .Official {
-    padding: 40px;
-    max-width: 1200px;
+    padding: 50px;
+    width: 1200px;
     margin: auto;
     background: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: absolute;
     top: 80px;
-    left: 600px
+    left: 450px
 }
 
 .Head {
@@ -38,6 +38,7 @@ table {
     background: white;
     border-radius: 5px;
     overflow: hidden;
+    
 }
 
 th, td {
