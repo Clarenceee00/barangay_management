@@ -16,6 +16,7 @@ import OffSignUpForm from "./Admin/Barangayofficials/OfficialForm.jsx";
 import BarangayCert from "./Admin/BarangayCertificateForm/BarangayCert.jsx"
 import Dashboard from "./Admin/DASHBOARD/Dashboard.jsx"
 import ResidentInformationForm from "./Admin/ResidentInformation/ResidentInfo.jsx"
+import ResidentInformationTable from "./Admin/ResidentInformation/ResidentTable.jsx"
 
 
 
@@ -41,6 +42,7 @@ function App() {
        <Route path="/barangaycert" element={< BarangayCert/>} />
        <Route path="/dashboard" element={<Dashboard/>} />
        <Route path="/ResidentInformationForm" element={<ResidentInformationForm/>} />
+       <Route path="/ResidentInformationTable" element={<ResidentInformationTable/>} />
        
  
         

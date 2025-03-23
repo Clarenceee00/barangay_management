@@ -11,7 +11,7 @@ const Sidebar = () => {
       <h2>Barangay Sabang</h2>
       <ul>
          <li><Link to="/Dashboard">DashBoard</Link></li>
-        <li><Link to="">Resident Information</Link></li>
+        <li><Link to="/ResidentInformationTable">Resident Information</Link></li>
         <li><Link to="/barangaycert">Barangay Certificate</Link></li>
         <li><Link to="/project">Project</Link></li>
         <li><Link to="/official">Barangay Officer</Link></li>

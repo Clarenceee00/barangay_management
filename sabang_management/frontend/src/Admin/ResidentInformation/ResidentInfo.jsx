@@ -1,15 +1,14 @@
 // src/ResidentInfo.jsx
 import React from 'react';
+import BackButton from "../../components/Back/Back";
 
 const ResidentInformationForm = () => {
   return (
     <>
-      
-      <div className="container">
-        <h2>Resident Information</h2>
+        <h1>RESIDENT INFORMATION</h1>
         <div className="form-container">
           <div className="image-upload">
-            <div className="image-placeholder">No Image</div>
+           <div className="image-placeholder">No Image</div>
             <button className="browse-button">Browse picture from drive</button>
           </div>
           <div className="form-fields">
@@ -43,6 +42,10 @@ const ResidentInformationForm = () => {
             </div>
             <div className="field-group">
               <label>Age:</label>
+              <input type="number" />
+            </div>
+            <div className="field-group">
+              <label>Contact Number:</label>
               <input type="number" />
             </div>
             <div className="field-group">
@@ -91,13 +94,22 @@ const ResidentInformationForm = () => {
             <button className="save-button">Save</button>
             <button className="update-button">Update</button>
             <button className="cancel-button">Cancel</button>
+            <BackButton />
           </div>
         </div>
-      </div>
+ 
       <style>
         {`
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            }
+
           .container {
             width: 100%;
+             flex-grow: 1;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
@@ -106,21 +118,26 @@ const ResidentInformationForm = () => {
             background-color: #f9f9f9;
             }
 
-        h2 {
+        h1 {
             text-align: center;
+            position: relative;
+            top: 15px;
             }
 
         .form-container {
             display: flex;
             gap: 20px;
             align-items: flex-start;
+             width: 1000px;
+             position: relative;
+             top: -5px;
             }
 
        
         .image-upload {
             flex: 1;
-            max-width: 300px;
-            padding: 20px;
+            max-width: 400px;
+            padding: 10px;
             border: 1px solid #ccc;
             border-radius: 8px;
             background-color: #ffffff;
@@ -152,7 +169,7 @@ const ResidentInformationForm = () => {
         .form-fields {
             flex: 2;
             display: grid;
-            grid-template-columns: repeat(2, 1fr); 
+            grid-template-columns: repeat(3, 1fr); 
             gap: 15px;
             width: 100%;
             }
@@ -187,6 +204,7 @@ const ResidentInformationForm = () => {
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            
             }
 
         .save-button {

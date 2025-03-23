@@ -34,7 +34,7 @@ const OfficialsTable = () => {
     <>
       <Sidebar />
       <div className='Official'>
-        <h2 className='Head'>Barangay Officials</h2>
+        <h1 className='Head'>Barangay Officials</h1>
         <button onClick={() => navigate('/offForm')}>Add Officials</button>
         <table>
           <thead>

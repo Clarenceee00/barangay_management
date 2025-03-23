@@ -74,7 +74,7 @@ const BarangayCert = () => {
               text-align: left;
             }
             th {
-              background: #28a745;
+              background:rgb(38, 143, 241);
               color: white;
             }
             tr:nth-child(even) {
