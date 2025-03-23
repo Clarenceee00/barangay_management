@@ -40,7 +40,7 @@ const ResidentInformationTable = () => {
               <td>Kimberly Bernardo</td>
               <td>09123456789</td>
               <td>Baliuag, Bulacan</td>
-              <td>1990-01-01</td>
+              <td>2003-12-12</td>
               <td>
                 <button className="edit-button">Edit</button>
                 <button className="delete-button">Delete</button>
