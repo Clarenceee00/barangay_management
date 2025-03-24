@@ -57,7 +57,6 @@ const ResidentInformationForm = () => {
               <select>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
-                <option value="other">Other</option>
               </select>
             </div>
             <div className="field-group">
@@ -65,7 +64,6 @@ const ResidentInformationForm = () => {
               <select>
                 <option value="male">Employed</option>
                 <option value="female">Un Employed</option>
-                <option value="other">Other</option>
               </select>
             </div>
             <div className="field-group">
@@ -73,7 +71,6 @@ const ResidentInformationForm = () => {
               <select>
                 <option value="male">Voters</option>
                 <option value="female">Not Voters</option>
-                <option value="other">Other</option>
               </select>
             </div>
             <div className="field-group">
