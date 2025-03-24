@@ -13,10 +13,6 @@ const ResidentInformationForm = () => {
           </div>
           <div className="form-fields">
             <div className="field-group">
-              <label>National ID:</label>
-              <input type="text" />
-            </div>
-            <div className="field-group">
               <label>Last Name:</label>
               <input type="text" />
             </div>
@@ -29,7 +25,7 @@ const ResidentInformationForm = () => {
               <input type="text" />
             </div>
             <div className="field-group">
-              <label>Alias:</label>
+              <label>Nickname:</label>
               <input type="text" />
             </div>
             <div className="field-group">
@@ -93,7 +89,6 @@ const ResidentInformationForm = () => {
           <div className="controls">
             <button className="save-button">Save</button>
             <button className="update-button">Update</button>
-            <button className="cancel-button">Cancel</button>
             <BackButton />
           </div>
         </div>

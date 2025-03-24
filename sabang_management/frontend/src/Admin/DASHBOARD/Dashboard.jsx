@@ -19,17 +19,17 @@ const data = {
       },
     ],
   },
-  residential: {
-    labels: ['Occupied', 'Vacant'],
+  Certificate: {
+    labels: ['BarangayIndigency', 'BarangayClearance', 'IndengencyScholarship', 'Job&Oath', 'CertificateOfResidency'],
     datasets: [
       {
-        data: [70, 30],
-        backgroundColor: ['#4bc0c0', '#36a2eb'],
-        hoverBackgroundColor: ['#4bc0c0', '#36a2eb'],
+        data: [70, 30, 10, 20, 40],
+        backgroundColor: ['#4bc0c0', '#36a2eb', '#ffce56', '#ff6384', '#9966ff'],
+        hoverBackgroundColor: ['#4bc0c0', '#36a2eb, #ffce56', '#ff6384', '#9966ff'],
       },
     ],
   },
-  establishments: {
+  Voters: {
     labels: ['Voters', 'Not Voters'],
     datasets: [
       {
@@ -39,7 +39,7 @@ const data = {
       },
     ],
   },
-  helpdesk: {
+  Employ: {
     labels: ['Employed', 'Not Employed'],
     datasets: [
       {
@@ -59,6 +59,11 @@ const Dashboard = () => {
     <div style={styles.container}>
       <h1 style={{ textAlign: "center", marginTop: "5px"}}>Barangay Sabang Dashboard</h1>
       <div style={styles.statContainer}>
+      <div style={styles.statBox}>
+          <h2>2,000</h2>
+          <p>Barangay Certificate</p>
+          <Doughnut data={data.Certificate} />
+        </div>
         <div  style={styles.statBox} className='FirstCircle'>
           <h2>2,000</h2>
           <p>Population</p>
@@ -66,18 +71,13 @@ const Dashboard = () => {
         </div>
         <div style={styles.statBox}>
           <h2>2,000</h2>
-          <p>Residential Areas</p>
-          <Doughnut data={data.residential} />
-        </div>
-        <div style={styles.statBox}>
-          <h2>2,000</h2>
           <p>Voters</p>
-          <Doughnut data={data.establishments} />
+          <Doughnut data={data.Voters} />
         </div>
         <div style={styles.statBox}>
           <h2>2,000</h2>
-          <p>EMPLOY</p>
-          <Doughnut data={data.helpdesk} />
+          <p>Employ</p>
+          <Doughnut data={data.Employ} />
         </div>
       </div>
     </div>

@@ -20,7 +20,7 @@ const BarangayCert = () => {
       <>
       <Sidebar />
       <div className="container">
-        <h2>Listahan ng mga Kumuhang Certificate</h2>
+        <h2>List of Barangay Certificate Recipients</h2>
         <table>
           <thead>
             <tr>
