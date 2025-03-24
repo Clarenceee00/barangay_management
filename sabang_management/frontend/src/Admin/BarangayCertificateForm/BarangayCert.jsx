@@ -10,9 +10,9 @@ const BarangayCert = () => {
       { id: 5, name: "Emilio Aguinaldo", certificate: "Barangay Indigency", date: "March 12, 2025", status: "Ready to Pick Up", form: "Form 5" }
     ]);
   
-    const toggleStatus = (id) => {
+    const updateStatus = (id, newStatus) => {
       setCertificates(certificates.map(cert => 
-        cert.id === id ? { ...cert, status: cert.status === "Pending" ? "Ready to Pick Up" : "Pending" } : cert
+        cert.id === id ? { ...cert, status: newStatus } : cert
       ));
     };
   
@@ -24,13 +24,13 @@ const BarangayCert = () => {
         <table>
           <thead>
             <tr>
-              <th>#</th>
-              <th>Pangalan</th>
-              <th>Uri ng Certificate</th>
-              <th>Petsa ng Pagtanggap</th>
+              <th>No.</th>
+              <th>Name</th>
+              <th>Certificate</th>
+              <th>Date</th>
               <th>Form</th>
-              <th>Estado</th>
-              <th>Aksyon</th>
+              <th>Status</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -43,8 +43,17 @@ const BarangayCert = () => {
                 <td>{cert.form}</td>
                 <td>{cert.status}</td>
                 <td>
-                  <button onClick={() => toggleStatus(cert.id)} className={cert.status === "Pending" ? "pending" : "ready"}>
-                    {cert.status === "Pending" ? "Mark as Ready" : "Mark as Pending"}
+                  <button onClick={() => updateStatus(cert.id, "Pending")} className="pending">
+                    Pending
+                  </button>
+                  <button onClick={() => updateStatus(cert.id, "Approved")} className="approved">
+                    Approved
+                  </button>
+                  <button onClick={() => updateStatus(cert.id, "Complete")} className="complete">
+                    Complete
+                  </button>
+                  <button onClick={() => updateStatus(cert.id, "Not Approved")} className="not-approved">
+                    Not Approved
                   </button>
                 </td>
               </tr>
@@ -55,7 +64,7 @@ const BarangayCert = () => {
         <style>
           {`
             .container {
-              max-width: 800px;
+              max-width: 1500px;
               margin: auto;
               padding: 20px;
               background: #f9f9f9;
@@ -74,7 +83,7 @@ const BarangayCert = () => {
               text-align: left;
             }
             th {
-              background:rgb(38, 143, 241);
+              background: rgb(38, 143, 241);
               color: white;
             }
             tr:nth-child(even) {
@@ -86,22 +95,25 @@ const BarangayCert = () => {
               border-radius: 5px;
               cursor: pointer;
               color: white;
+              margin: 2px;
             }
             .pending {
-              background: red;
+              background: rgb(15, 129, 243);
             }
-            .ready {
-              background: green;
+            .approved {
+              background: rgb(241, 14, 14);
+            }
+            .complete {
+              background: rgb(14, 241, 14);
+            }
+            .not-approved {
+              background: rgb(3, 2, 2);
             }
           `}
         </style>
       </div>
       </>
     );
-  };
-
-
-
-  
+};
 
 export default BarangayCert;
