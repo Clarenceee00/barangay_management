@@ -1,6 +1,7 @@
 import "../styles/Auth.css"; 
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import assets from "../assets/Icon.jfif";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -22,7 +23,22 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div  style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100vh",
+      backgroundImage: "url('src/assets/icon.jfif')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      }}>
+      
+     
       <form className="auth-form" onSubmit={handleLogin}>
         <h2>Login Page</h2>
         <input
