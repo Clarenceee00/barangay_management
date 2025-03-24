@@ -30,7 +30,7 @@ const Login = () => {
       width: "100%",
       height: "100vh",
       backgroundImage: "url('src/assets/icon.jfif')",
-      backgroundSize: "cover",
+      backgroundSize: "1000px",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
       display: "flex",
@@ -38,7 +38,6 @@ const Login = () => {
       alignItems: "center",
       }}>
       
-     
       <form className="auth-form" onSubmit={handleLogin}>
         <h2>Login Page</h2>
         <input

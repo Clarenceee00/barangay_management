@@ -27,7 +27,20 @@ const Signup = () => {
   };
   
   return (
-    <div>
+    <div style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100vh",
+      backgroundImage: "url('src/assets/icon.jfif')",
+      backgroundSize: "1000px",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      }}>
       
       <form className="auth-form ">
         <h2>Sign Up Page</h2>
