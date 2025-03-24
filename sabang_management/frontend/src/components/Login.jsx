@@ -11,7 +11,7 @@ const Login = () => {
     event.preventDefault(); // Prevent page reload
 
     // Dummy authentication logic
-    if (credentials.username === "Mich" && credentials.password === "password") {
+    if (credentials.username === "Pentavision" && credentials.password === "password") {
       localStorage.setItem("isAuthenticated", "true"); // Store auth state
       navigate("/home"); // Redirect to Landing Page
     }else if (credentials.username === "admin" && credentials.password === "admin123") {
