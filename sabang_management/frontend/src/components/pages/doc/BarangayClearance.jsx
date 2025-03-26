@@ -5,7 +5,7 @@ function BarangayClearance({ onClick = "Submit" }) {
     return (
       <div className="form-container">
         <h2>Barangay Clearance</h2>
-        <label>Name: <input type="text" /></label>
+        <label>Full Name: <input type="text" /></label>
         <label>Birthday: <input type="date" /></label>
         <label>Address: <input type="text" /></label>
         <label>Para saan gagamitin: <input type="text" /></label>

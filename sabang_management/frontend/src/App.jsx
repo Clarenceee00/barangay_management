@@ -17,6 +17,7 @@ import BarangayCert from "./Admin/BarangayCertificateForm/BarangayCert.jsx"
 import Dashboard from "./Admin/DASHBOARD/Dashboard.jsx"
 import ResidentInformationForm from "./Admin/ResidentInformation/ResidentInfo.jsx"
 import ResidentInformationTable from "./Admin/ResidentInformation/ResidentTable.jsx"
+import WaitingArea from "./components/pages/doc/WaitingArea.jsx"
 
 
 
@@ -43,6 +44,7 @@ function App() {
        <Route path="/dashboard" element={<Dashboard/>} />
        <Route path="/ResidentInformationForm" element={<ResidentInformationForm/>} />
        <Route path="/ResidentInformationTable" element={<ResidentInformationTable/>} />
+       <Route path="/Process" element={<WaitingArea/>} />
        
  
         

@@ -8,18 +8,16 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="nav-container">
-        <img src="" alt="" />
         <Link to="/" className="nav-logo">Barangay Sabang</Link>
         <ul className={isOpen ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">
             <Link to="/home" className="nav-link">Home</Link>
           </li>
-          {/*<li className="nav-item">
-            <Link to="/about" className="nav-link">About</Link>
-          </li> */}
-          
           <li className="nav-item">
             <Link to="/Certification" className="nav-link">Certification</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/Process" className="nav-link">Process</Link>
           </li>
           <li className="nav-item">
             <Link to="/contact-us" className="nav-link">Contact</Link>
