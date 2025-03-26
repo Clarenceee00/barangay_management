@@ -8,6 +8,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="nav-container">
+        <img src="" alt="" />
         <Link to="/" className="nav-logo">Barangay Sabang</Link>
         <ul className={isOpen ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">
