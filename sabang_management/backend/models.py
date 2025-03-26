@@ -34,6 +34,33 @@ class Admin(BaseUserManager):
         return user
 
 
+class Resident(models.Model):
+    STATUS_CHOICES = [
+        ('S', 'Single'),
+        ('M', 'Married'),
+        ('D', 'Divorced'),
+    ]
+    
+    resident_picture = models.ImageField(upload_to='resident_pics/')
+    last_name = models.CharField(max_length=30)
+    first_name = models.CharField(max_length=30)
+    middle_name = models.CharField(max_length=30)
+    nickname = models.CharField(max_length=30)
+    birthdate = models.DateField()
+    birth_place = models.CharField(max_length=50)
+    age = models.IntegerField()
+    contact_number = models.CharField(max_length=11)
+    status = models.CharField(max_length=1, choices=STATUS_CHOICES)
+    is_male = models.BooleanField()
+    is_employed = models.BooleanField()
+    is_voters = models.BooleanField()
+    religion = models.CharField(max_length=30)
+    email = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"{self.last_name, first_name, middle_name} ({'Male' if self.is_male else 'Female', 'Employed' if self.is_employed else 'Unemployed', 'Voters' if self.is_voters else 'Not Voters'})"
+
+
 class BarangayClearance(models.Model):
     name = models.CharField(max_length=50)
     birthday = models.DateField()
