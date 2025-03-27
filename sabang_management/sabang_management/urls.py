@@ -21,6 +21,6 @@ from backend.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('register/', register_user, name='register'),
+    path('', include('backend.urls')),
 ]
 
