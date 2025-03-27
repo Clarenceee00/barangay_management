@@ -63,7 +63,7 @@ const ResidentInformationForm = () => {
               <label>Employ:</label>
               <select>
                 <option value="male">Employed</option>
-                <option value="female">Un Employed</option>
+                <option value="female">Unemployed</option>
               </select>
             </div>
             <div className="field-group">
