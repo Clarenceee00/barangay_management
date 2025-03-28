@@ -1,14 +1,19 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
+import barangayIcon from "../../assets/Icon.jfif";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
+    <>
     <nav className="navbar">
       <div className="nav-container">
-        <Link to="/" className="nav-logo">Barangay Sabang</Link>
+        <div style={{ display: "flex", alignItems: "center" }}>
+      <img src={barangayIcon} alt="Barangay Clearance" className="barangay-image"  style={{width: "60px"}}/>
+        <h2 className="Barangay">Barangay Sabang</h2>
+        </div>
         <ul className={isOpen ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">
             <Link to="/home" className="nav-link">Home</Link>
@@ -28,6 +33,8 @@ const Navbar = () => {
         </ul>
       </div>
     </nav>
+   
+    </>
   );
 };
 

@@ -63,3 +63,12 @@ input {
   .submit-button:hover {
     background-color: #0056b3;
   }
+  .barangay-image {
+    width: 100px; 
+    height: auto; 
+    border-radius: 10px; 
+    display: block;
+    margin: 0 auto 15px; 
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); 
+  }
+

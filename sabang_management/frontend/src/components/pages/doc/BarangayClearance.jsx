@@ -1,9 +1,11 @@
 import BackButton from "../../Back/Back";
 import "./Style/Design.css"
+import barangayIcon from "../../../assets/Icon.jfif";
 
 function BarangayClearance({ onClick = "Submit" }) {
     return (
       <div className="form-container">
+      <img src={barangayIcon} alt="Barangay Clearance" className="barangay-image" />
         <h2>Barangay Clearance</h2>
         <label>Full Name: <input type="text" /></label>
         <label>Birthday: <input type="date" /></label>

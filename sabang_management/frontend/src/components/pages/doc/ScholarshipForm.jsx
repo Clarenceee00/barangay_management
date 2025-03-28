@@ -1,8 +1,10 @@
 import BackButton from "../../Back/Back";
+import barangayIcon from "../../../assets/Icon.jfif";
 
 function ScholarshipForm({ onClick = "Submit" }) {
   return (
     <div className="form-container">
+      <img src={barangayIcon} alt="Barangay Clearance" className="barangay-image" />
       <h2>Pagpapatunay for Scholarship</h2>
       <label>Name of Parent: <input type="text" /></label>
       <label>Age: <input type="number" /></label>

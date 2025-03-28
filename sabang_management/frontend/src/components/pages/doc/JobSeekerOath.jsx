@@ -1,9 +1,11 @@
 import "./Style/Design.css"
 import BackButton from "../../Back/Back";
+import barangayIcon from "../../../assets/Icon.jfif";
 
 function JobSeekerOath({ onClick= "Submit" }) {
     return (
       <div className="form-container">
+        <img src={barangayIcon} alt="Barangay Clearance" className="barangay-image" />
         <h2>Job Seeker & Oath</h2>
         <label>Name: <input type="text" /></label>
         <label>Age: <input type="number" /></label>

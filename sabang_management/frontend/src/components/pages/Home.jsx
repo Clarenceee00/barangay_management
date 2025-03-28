@@ -8,21 +8,21 @@ const Home = () => {
             id: 1,
             name: "Proyekto sa Pagsasaayos ng Daan",
             description: "Pag-aayos ng mga pangunahing daan sa barangay.",
-            image: "link_to_image_1.jpg",
+            image: "https://files01.pna.gov.ph/source/2021/10/16/concreting.jpg",
             status: "Ongoing"
         },
         {
             id: 2,
             name: "Pagtatanim ng Puno",
             description: "Isang proyekto para sa mas berdeng barangay.",
-            image: "link_to_image_2.jpg",
+            image: "https://www.vintagetreecare.com/wp-content/uploads/2023/06/planting-tree-1024x683.jpg",
             status: "Completed"
         },
         {
             id: 3,
             name: "Barangay Health Center",
             description: "Pagbuo ng bagong health center para sa mga residente.",
-            image: "link_to_image_3.jpg",
+            image: "https://www.healthfuturesfoundation.com/wp-content/uploads/2020/11/Sun-Life-Proj-jpeg.jpg",
             status: "Ongoing"
         }
     ];

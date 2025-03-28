@@ -53,4 +53,27 @@
   .nav-logo{
     font-size: 30px;
   }
+
+  .barangay-image {
+    margin: 0;
+     padding: 0; 
+     display: inline-block;
+     width: 60px; 
+     height: 60px;
+     border-radius: 50%;
+}
+ .Barangay {
+     margin: 0;
+     padding: 0; 
+     font-size: 35px; 
+     color: lightblue; 
+     font-weight: bold; 
+     position: relative;
+     top: 0px;
+      left: 20px;
+   
+    }
+    .right-nav{
+      width: 300px;
+    }
  
