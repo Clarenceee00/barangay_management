@@ -1,17 +1,8 @@
-from django.contrib.auth.models import User
 from rest_framework import serializers
+from .models import *
 
-class UserSerializer(serializers.ModelSerializer):
-    password = serializers.CharField(write_only=True)
-
+class ResidentSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
-        fields = ['username', 'email', 'password']
+        model = Resident
+        fields = ('resident_picture', 'last_name', 'first_name', 'middle_name', 'nickname', 'birthdate', 'birth_place', 'age', 'contact_number', 'status', 'is_male', 'is_employed', 'is_voters', 'religion', 'email')
 
-    def create(self, validated_data):
-        user = User.objects.create_user(
-            username=validated_data['username'],
-            email=validated_data['email'],
-            password=validated_data['password']
-        )
-        return user

@@ -1,6 +1,11 @@
 from django.urls import path
-from .views import register_user
+from .views import *
+from rest_framework.routers import DefaultRouter
 
-urlpatterns = [
-    path('register/', register_user, name='register'),
-]
+router = DefaultRouter()
+router.register('resident', ResidentViewset, basename='resident')
+urlpatterns = router.urls
+
+# urlpatterns = [
+#     path('/', , name=''),
+# ]
