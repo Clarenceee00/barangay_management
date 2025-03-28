@@ -41,6 +41,7 @@ class Resident(models.Model):
         ('D', 'Divorced'),
     ]
     
+    id = models.AutoField(primary_key=True)
     resident_picture = models.ImageField(upload_to='resident_pics/')
     last_name = models.CharField(max_length=30)
     first_name = models.CharField(max_length=30)
@@ -58,10 +59,11 @@ class Resident(models.Model):
     email = models.CharField(max_length=100)
 
     def __str__(self):
-        return f"{self.last_name, first_name, middle_name} ({'Male' if self.is_male else 'Female', 'Employed' if self.is_employed else 'Unemployed', 'Voters' if self.is_voters else 'Not Voters'})"
+        return f"{self.nickname} ({'Male' if self.is_male else 'Female', 'Employed' if self.is_employed else 'Unemployed', 'Voters' if self.is_voters else 'Not Voters'})"
 
 
 class BarangayClearance(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
     birthday = models.DateField()
     address = models.CharField(max_length=100)
@@ -72,6 +74,7 @@ class BarangayClearance(models.Model):
 
 
 class PagpapatunayForScholar(models.Model):
+    id = models.AutoField(primary_key=True)
     parent_name = models.CharField(max_length=50)
     age = models.IntegerField()
     occupation = models.CharField(max_length=30)
@@ -82,6 +85,7 @@ class PagpapatunayForScholar(models.Model):
 
 
 class Residency(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
     address = models.CharField(max_length=100)
     is_male = models.BooleanField()
@@ -91,6 +95,7 @@ class Residency(models.Model):
 
 
 class JobSeekerAndOath(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
     age = models.IntegerField()
     birthday = models.DateField()
@@ -102,6 +107,7 @@ class JobSeekerAndOath(models.Model):
 
 
 class Indigency(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
     used_in = models.CharField(max_length=100)
     is_male = models.BooleanField()
@@ -117,6 +123,7 @@ class Project(models.Model):
         ('U', 'Upcoming'),
     ]
 
+    id = models.AutoField(primary_key=True)
     project_name = models.CharField(max_length=100)
     status = models.CharField(max_length=1, choices=STATUS_CHOICES)
     project_picture = models.ImageField(upload_to='project_pics/')
@@ -126,6 +133,7 @@ class Project(models.Model):
 
 
 class BarangayOfficials(models.Model):
+    id = models.AutoField(primary_key=True)
     position = models.CharField(max_length=50)
     name = models.CharField(max_length=50)
     contact_number = models.CharField(max_length=11)
