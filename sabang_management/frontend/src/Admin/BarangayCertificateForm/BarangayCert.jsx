@@ -69,11 +69,17 @@ const BarangayCert = () => {
               padding: 20px;
               background: #f9f9f9;
               border-radius: 10px;
-              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
               text-align: center;
               min-height: 800px;
               position: relative;
               left: 80px; 
+            }
+            h2 {
+              font-size: 44px;
+              font-weight: bold;
+              margin-bottom: 20px;
+              color: #333;
             }
             table {
               width: 100%;

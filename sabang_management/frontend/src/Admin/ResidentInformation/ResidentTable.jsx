@@ -58,13 +58,14 @@ const ResidentInformationTable = () => {
         {`
         .content-box {
         padding: 50px;
-        width: 1200px;
+        width: 1000px;
         margin: auto;
         background: #f9f9f9;
         border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         position: absolute;
         top: 80px;
+        min-height: 800px;
         left: 450px;
         }
      .Resident {

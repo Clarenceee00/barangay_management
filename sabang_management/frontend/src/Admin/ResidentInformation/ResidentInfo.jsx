@@ -101,8 +101,8 @@ const ResidentInformationForm = () => {
 
           .container {
             width: 100%;
-             flex-grow: 1;
-            max-width: 1200px;
+            flex-grow: 1;
+            max-width: 1500px;
             margin: 0 auto;
             padding: 20px;
             border: 1px solid #ccc;
