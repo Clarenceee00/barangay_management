@@ -75,5 +75,37 @@
     }
     .right-nav{
       width: 300px;
-    }
- 
+     }
+        @media (max-width: 768px) {
+          .nav-container {
+              flex-direction: column; /* Stack items vertically */
+              align-items: flex-start; /* Align items to the start */
+          }
+      
+          .nav-menu {
+              flex-direction: column; /* Stack menu items vertically */
+              gap: 10px; /* Reduce gap for smaller screens */
+          }
+      
+          .nav-logo {
+              font-size: 24px; /* Adjust logo size */
+          }
+      
+          .Barangay {
+              font-size: 28px; /* Adjust Barangay text size */
+          }
+      
+          .right-nav {
+              width: 100%; /* Make right-nav full width */
+          }
+      }
+      
+      @media (max-width: 480px) {
+          .nav-link {
+              font-size: 0.9rem; /* Smaller font size for links */
+          }
+      
+          .btn {
+              font-size: 12px; /* Smaller button font size */
+          }
+      }

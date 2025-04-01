@@ -1,34 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import Sidebar from '../COM/Sidevar/Sidebar';
 import { useNavigate } from 'react-router-dom';
 import "./Officials.css";
 
 const OfficialsTable = () => {
-  const [officials, setOfficials] = useState([]);
-  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    fetchOfficials();
-  }, []);
-
-  const fetchOfficials = async () => {
-    try {
-      const response = await axios.get('/api/officials');
-      setOfficials(Array.isArray(response.data) ? response.data : []);
-    } catch (error) {
-      console.error("Error fetching officials:", error);
-      setOfficials([]);
-    } finally {
-      setLoading(false);
+  // Sample officials data
+  const [officials, setOfficials] = useState([
+    {
+      position: "Barangay Captain",
+      name: "Juan Dela Cruz",
+      contact: "09123456789",
+      address: "Purok 1, Barangay XYZ",
+      startOfTerm: "2022-07-01",
+      endOfTerm: "2025-06-30"
+    },
+    {
+      position: "Kagawad",
+      name: "Maria Santos",
+      contact: "09987654321",
+      address: "Purok 3, Barangay XYZ",
+      startOfTerm: "2022-07-01",
+      endOfTerm: "2025-06-30"
+    },
+    {
+      position: "SK Chairman",
+      name: "Jose Rizal",
+      contact: "09211234567",
+      address: "Purok 5, Barangay XYZ",
+      startOfTerm: "2023-01-01",
+      endOfTerm: "2025-12-31"
     }
-  };
-
-  // Function para madagdagan ang bagong official
-  const addOfficial = (newOfficial) => {
-    setOfficials([...officials, newOfficial]);
-  };
+  ]);
 
   return (
     <>
@@ -69,4 +73,5 @@ const OfficialsTable = () => {
     </>
   );
 };
+
 export default OfficialsTable;
