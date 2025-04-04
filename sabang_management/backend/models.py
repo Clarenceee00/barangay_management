@@ -36,9 +36,9 @@ class Admin(BaseUserManager):
 
 class Resident(models.Model):
     STATUS_CHOICES = [
-        ('S', 'Single'),
-        ('M', 'Married'),
-        ('D', 'Divorced'),
+        ('Single', 'Single'),
+        ('Married', 'Married'),
+        ('Divorced', 'Divorced'),
     ]
     
     id = models.AutoField(primary_key=True)
@@ -51,7 +51,7 @@ class Resident(models.Model):
     birth_place = models.CharField(max_length=50)
     age = models.IntegerField()
     contact_number = models.CharField(max_length=11)
-    status = models.CharField(max_length=1, choices=STATUS_CHOICES)
+    status = models.CharField(max_length=8, choices=STATUS_CHOICES)
     is_male = models.BooleanField()
     is_employed = models.BooleanField()
     is_voters = models.BooleanField()
@@ -118,14 +118,15 @@ class Indigency(models.Model):
 
 class Project(models.Model):
     STATUS_CHOICES = [
-        ('O', 'Ongoing'),
-        ('C', 'Completed'),
-        ('U', 'Upcoming'),
+        ('Ongoing', 'Ongoing'),
+        ('Completed', 'Completed'),
+        ('Upcoming', 'Upcoming'),
     ]
 
     id = models.AutoField(primary_key=True)
     project_name = models.CharField(max_length=100)
-    status = models.CharField(max_length=1, choices=STATUS_CHOICES)
+    status = models.CharField(max_length=9, choices=STATUS_CHOICES)
+    project_details = models.CharField(max_length=200, null=True, blank=True)
     project_picture = models.ImageField(upload_to='project_pics/')
 
     def __str__(self):

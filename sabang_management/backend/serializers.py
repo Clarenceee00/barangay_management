@@ -40,7 +40,7 @@ class IndigencySerializer(serializers.ModelSerializer):
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
-        fields = ('id', 'project_name', 'status', 'project_picture')
+        fields = ('id', 'project_name', 'status', 'project_details', 'project_picture')
 
 
 class BarangayOfficialsSerializer(serializers.ModelSerializer):
