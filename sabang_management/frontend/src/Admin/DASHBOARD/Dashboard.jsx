@@ -49,6 +49,16 @@ const data = {
       },
     ],
   },
+  CivilStatus: {
+    labels: ['Single', 'Married', 'Divorced'],
+    datasets: [
+      {
+        data: [50, 30, 10, 10], // Example data
+        backgroundColor: ['#ff6384', '#36a2eb', '#ffce56'],
+        hoverBackgroundColor: ['#ff6384', '#36a2eb', '#ffce56'],
+      },
+    ],
+  },
 };
 
 const Dashboard = () => {
@@ -79,6 +89,11 @@ const Dashboard = () => {
           <p>Employ</p>
           <Doughnut data={data.Employ} />
         </div>
+        <div style={styles.statBox}>
+            <h2>2,000</h2>
+            <p>Civil Status</p>
+            <Doughnut data={data.CivilStatus} />
+          </div>
       </div>
     </div>
     </>
@@ -90,21 +105,21 @@ const styles = {
     padding: '20px',
     textAlign: 'center',
     marginLeft: '250px',
-
   },
   statContainer: {
     display: 'flex',
-    justifyContent: 'space-around',
+    justifyContent: 'center',       // Center align para pantay ang cards
+    flexWrap: 'wrap',               // Para mag-wrap pag maliit ang screen
+    gap: '20px',                    // Mas magandang spacing kaysa manual margin
     marginTop: '100px',
   },
   statBox: {
-    width: '250px',
+    width: '230px',
     backgroundColor: '#f9f9f9',
     borderRadius: '10px',
     padding: '20px',
-    boxShadow: '0 2px 10px rgba(0,0,0,0.5)',
-    marginLeft: '40px',
-
+    boxShadow: '0 2px 10px rgba(0,0,0,0.2)', // Medyo softer shadow
+    transition: 'transform 0.2s ease-in-out',
   },
 };
 
