@@ -12,7 +12,7 @@ const Navbar = () => {
       <div className="nav-container">
         <div style={{ display: "flex", alignItems: "center" }}>
       <img src={barangayIcon} alt="Barangay Clearance" className="barangay-image"  style={{width: "60px"}}/>
-        <h2 className="Barangay">Barangay Sabang</h2>
+        <h2 className="Barangay" style={{ color: "orange"}} >Barangay Sabang</h2>
         </div>
         <ul className={isOpen ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">
@@ -22,7 +22,7 @@ const Navbar = () => {
             <Link to="/Certification" className="nav-link">Certification</Link>
           </li>
           <li className="nav-item">
-            <Link to="/Process" className="nav-link">Process</Link>
+            <Link to="/Process" className="nav-link">Request Status</Link>
           </li>
           <li className="nav-item">
             <Link to="/contact-us" className="nav-link">Contact</Link>

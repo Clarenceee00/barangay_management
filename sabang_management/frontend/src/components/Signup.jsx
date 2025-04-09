@@ -33,8 +33,8 @@ const Signup = () => {
       left: 0,
       width: "100%",
       height: "100vh",
-      backgroundImage: "url('src/assets/icon.jfif')",
-      backgroundSize: "1000px",
+      backgroundImage: "url('src/assets/Barangay.jpg')",
+      backgroundSize: "100%",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
       display: "flex",
@@ -43,12 +43,12 @@ const Signup = () => {
       }}>
       
       <form className="auth-form ">
-        <h2>Sign Up Page</h2>
+        <h2>Sign Up</h2>
         <input type="text" placeholder="Username" />
         <input type="email" placeholder="Email" />
         <input type="password" placeholder="Password" />
         <button type="submit">Sign Up</button>
-        <p>May account na? <Link to="/login">Mag-login</Link></p>
+        <p>Do you have an account? <Link to="/login">Log in</Link></p>
       </form>
      
     </div>

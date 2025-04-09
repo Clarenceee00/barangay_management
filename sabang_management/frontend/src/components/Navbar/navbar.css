@@ -1,5 +1,5 @@
 .navbar {
-    background: #333;
+    background: #0815ca;
     color: white;
     padding: 15px;
     width: 100vw;
@@ -19,6 +19,7 @@
   
   .nav-menu {
     list-style: none;
+    background: #0815ca;
     display: flex;
     gap: 20px;
     padding: 0;
@@ -33,6 +34,9 @@
     color: white;
     text-decoration: none;
     font-size: 1rem;
+  }
+  .nav-link:hover {
+    color: #eb9412;
   }
   
   body {

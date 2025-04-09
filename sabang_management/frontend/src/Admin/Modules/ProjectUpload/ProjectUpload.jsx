@@ -80,7 +80,7 @@ const ProjectUpload = () => {
         <h2>Uploaded Projects</h2>
         <ul>
           {projects.length === 0 ? (
-            <li>Walang na-upload na proyekto.</li>
+            <li>No project uploaded.</li>
           ) : (
             projects.map((project, index) => (
               <li key={index}>

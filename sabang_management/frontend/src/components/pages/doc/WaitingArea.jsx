@@ -14,7 +14,7 @@ const WaitingArea = () => {
     <>
       <Navbar />
       <div className="waiting-area">
-        <h2>Waiting Area</h2>
+        <h2>Request Status</h2>
         <table>
           <thead>
             <tr>

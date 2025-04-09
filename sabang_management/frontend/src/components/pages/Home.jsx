@@ -72,7 +72,7 @@ const Home = () => {
                         margin: 10px;
                         width: 300px;
                         text-align: center;
-                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                        box-shadow: 0 0 10px rgba(1, 1, 10, 0.3);
                     }
 
                     .project-card img {

@@ -39,7 +39,7 @@ const Login = () => {
       }}>
       
       <form className="auth-form" onSubmit={handleLogin}>
-        <h2>Login Page</h2>
+        <h2>Login</h2>
         <input
           type="text"
           placeholder="Username"
@@ -55,7 +55,7 @@ const Login = () => {
           required
         />
         <button type="submit">Login</button>
-        <p>Wala pang account? <Link to="/signup">Mag-sign up</Link></p>
+        <p>Do you not have an account yet? <Link to="/signup">Sign up</Link></p>
       </form>
     </div>
   );
