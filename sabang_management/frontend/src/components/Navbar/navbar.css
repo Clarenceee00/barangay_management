@@ -1,5 +1,5 @@
 .navbar {
-    background: #0815ca;
+    background: #3541eb;
     color: white;
     padding: 15px;
     width: 100vw;
@@ -19,7 +19,7 @@
   
   .nav-menu {
     list-style: none;
-    background: #0815ca;
+    background: #3541eb;
     display: flex;
     gap: 20px;
     padding: 0;
