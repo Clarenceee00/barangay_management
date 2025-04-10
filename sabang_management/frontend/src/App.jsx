@@ -19,7 +19,8 @@ import ResidentInformationForm from "./Admin/ResidentInformation/ResidentInfo.js
 import ResidentInformationTable from "./Admin/ResidentInformation/ResidentTable.jsx"
 import WaitingArea from "./components/pages/doc/WaitingArea.jsx"
 import Landingpage from "./components/pages/LandingPage/Landingpage.jsx";
-
+import LandingCertification from "./components/pages/LandingPage/Landingcert.jsx";
+import LandingContact from "./components/pages/LandingPage/Contactlanding.jsx";
 
 
 function App() {
@@ -46,6 +47,9 @@ function App() {
        <Route path="/ResidentInformationTable" element={<ResidentInformationTable/>} />
        <Route path="/Process" element={<WaitingArea/>} />
        <Route path="/" element={<Landingpage/>} />
+       <Route path="/LandingCertification" element={<LandingCertification/>} />
+       <Route path="/LandingContact" element={<LandingContact/>} />
+      
        
  
         
