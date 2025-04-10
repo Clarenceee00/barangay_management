@@ -85,7 +85,6 @@ const ResidentInformationForm = () => {
           </div>
           <div className="controls">
             <button className="save-button">Save</button>
-            <button className="update-button">Update</button>
             <BackButton />
           </div>
         </div>

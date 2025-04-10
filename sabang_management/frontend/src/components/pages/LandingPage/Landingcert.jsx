@@ -7,7 +7,7 @@ import "./style/certificate.css";
 
 
 
-export const Certification = () => {
+export const LandingCertification = () => {
   return (
     <>
     <Navbar/>
@@ -27,4 +27,4 @@ export const Certification = () => {
   );
 };
 
-export default Certification;
+export default LandingCertification;

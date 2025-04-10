@@ -10,19 +10,33 @@ const OfficialForm = ({ onAddOfficial }) => {
     address: '',
     startOfTerm: '',
     endOfTerm: '',
+    picture: null, // Add picture to formData
   });
 
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value, type, files } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === 'file' ? files[0] : value, // Handle file input
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const formDataToSend = new FormData();
+    for (const key in formData) {
+      formDataToSend.append(key, formData[key]);
+    }
+
     try {
-      const response = await axios.post('/api/officials', formData);
+      const response = await axios.post('/api/officials', formDataToSend, {
+        headers: {
+          'Content-Type': 'multipart/form-data', // Set the content type for file upload
+        },
+      });
       onAddOfficial(response.data);
       navigate('/official'); // Babalik sa officials page
     } catch (error) {
@@ -34,6 +48,7 @@ const OfficialForm = ({ onAddOfficial }) => {
     <div className="form-container">
       <h2>Add Official</h2>
       <form onSubmit={handleSubmit}>
+      <input type="file" name="picture" accept="image/*" onChange={handleChange} /> {/* File input for picture */}
         <input type="text" name="position" placeholder="Position" required onChange={handleChange} />
         <input type="text" name="name" placeholder="Name" required onChange={handleChange} />
         <input type="tel" name="contact" placeholder="Contact" required onChange={handleChange} />
@@ -49,4 +64,3 @@ const OfficialForm = ({ onAddOfficial }) => {
 };
 
 export default OfficialForm;
-
