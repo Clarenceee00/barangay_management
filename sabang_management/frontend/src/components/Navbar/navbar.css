@@ -89,7 +89,7 @@
       
           .nav-menu {
               flex-direction: column; /* Stack menu items vertically */
-              gap: 10px; /* Reduce gap for smaller screens */
+              gap: 5px; /* Reduce gap for smaller screens */
           }
       
           .nav-logo {
@@ -97,7 +97,7 @@
           }
       
           .Barangay {
-              font-size: 28px; /* Adjust Barangay text size */
+              font-size: 20px; /* Adjust Barangay text size */
           }
       
           .right-nav {
@@ -111,6 +111,6 @@
           }
       
           .btn {
-              font-size: 12px; /* Smaller button font size */
+              font-size: 5px; /* Smaller button font size */
           }
       }
