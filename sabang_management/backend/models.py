@@ -41,7 +41,7 @@ class Resident(models.Model):
         ('Divorced', 'Divorced'),
     ]
     
-    id = models.AutoField(primary_key=True)
+    resident_id = models.AutoField(primary_key=True)
     resident_picture = models.ImageField(upload_to='resident_pics/')
     last_name = models.CharField(max_length=30)
     first_name = models.CharField(max_length=30)
