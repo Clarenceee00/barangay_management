@@ -19,13 +19,7 @@ const NavbarLanding = () => {
             <Link to="/" className="nav-link">Home</Link>
           </li>
           <li className="nav-item">
-            <Link to="/LandingCertification" className="nav-link">Certification</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/login" className="nav-link">Request Status</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/LandingContact " className="nav-link">Contact</Link>
+            <Link to="/contact" className="nav-link">Contact</Link>
           </li>
           <Link to="/login">
                 <button className="btn">Log In</button>
