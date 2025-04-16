@@ -72,7 +72,7 @@ const Dashboard = () => {
       <div style={styles.container}>
         <div style={styles.headerWrapper}>
           <div style={styles.headerContent}>
-            <h1 style={styles.header}>Barangay Sabang Dashboard</h1>
+            <h1 style={styles.header}>Barangay Sabang Dashboard Analytics</h1>
           </div>
           <div style={styles.miniCalendar}>
             <DatePicker
@@ -86,31 +86,31 @@ const Dashboard = () => {
         <div style={styles.statContainer}>
           <div style={{ ...styles.statBox, backgroundColor: '#98ff98' }}>
             <FontAwesomeIcon icon={faFileAlt} style={{ fontSize: '50px', marginRight: '8px' }} />
-            <h2>2,000</h2>
+            <h2>170</h2>
             <p>Barangay Certificate</p>
           </div>
 
           <div style={{ ...styles.statBox, backgroundColor: '#ffcccc' }}>
             <FontAwesomeIcon icon={faUsers} style={{ fontSize: '50px', marginRight: '8px' }} />
-            <h2>2,000</h2>
+            <h2>100</h2>
             <p>Population</p>
           </div>
 
           <div style={{ ...styles.statBox, backgroundColor: '#add8e6' }}>
             <FontAwesomeIcon icon={faVoteYea} style={{ fontSize: '50px', marginRight: '8px' }} />
-            <h2>2,000</h2>
+            <h2>100</h2>
             <p>Voters</p>
           </div>
 
           <div style={{ ...styles.statBox, backgroundColor: '#d3d3d3' }}>
             <FontAwesomeIcon icon={faBriefcase} style={{ fontSize: '50px', marginRight: '8px' }} />
-            <h2>2,000</h2>
+            <h2>100</h2>
             <p>Employ</p>
           </div>
 
           <div style={{ ...styles.statBox, backgroundColor: '#ffffe0' }}>
             <FontAwesomeIcon icon={faHeart} style={{ fontSize: '50px', marginRight: '8px' }} />
-            <h2>2,000</h2>
+            <h2>100</h2>
             <p>Civil Status</p>
           </div>
         </div>
@@ -160,7 +160,7 @@ const styles = {
     margin: 0,
   },
   miniCalendar: {
-    backgroundColor: '#fff',
+    backgroundColor: 'lightgray',
     padding: '5px 10px',
     borderRadius: '8px',
     boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
