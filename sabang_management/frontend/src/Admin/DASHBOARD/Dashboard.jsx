@@ -1,8 +1,12 @@
 // src/Dashboard.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import Sidebar from '../COM/Sidevar/Sidebar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFileAlt, faUsers, faVoteYea, faBriefcase, faHeart } from '@fortawesome/free-solid-svg-icons';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -60,36 +64,57 @@ const data = {
 };
 
 const Dashboard = () => {
+  const [selectedDate, setSelectedDate] = useState(new Date());
+
   return (
     <>
       <Sidebar />
-
       <div style={styles.container}>
-        <h1 style={styles.header}>Barangay Sabang Dashboard</h1>
-        <div style={styles.statContainer}>
+        <div style={styles.headerWrapper}>
+          <div style={styles.headerContent}>
+            <h1 style={styles.header}>Barangay Sabang Dashboard</h1>
+          </div>
+          <div style={styles.miniCalendar}>
+            <DatePicker
+              selected={selectedDate}
+              onChange={(date) => setSelectedDate(date)}
+              dateFormat="MMMM d, yyyy"
+            />
+          </div>
+        </div>
 
+        <div style={styles.statContainer}>
           <div style={{ ...styles.statBox, backgroundColor: '#98ff98' }}>
+            <FontAwesomeIcon icon={faFileAlt} style={{ fontSize: '50px', marginRight: '8px' }} />
             <h2>2,000</h2>
             <p>Barangay Certificate</p>
           </div>
+
           <div style={{ ...styles.statBox, backgroundColor: '#ffcccc' }}>
+            <FontAwesomeIcon icon={faUsers} style={{ fontSize: '50px', marginRight: '8px' }} />
             <h2>2,000</h2>
             <p>Population</p>
           </div>
+
           <div style={{ ...styles.statBox, backgroundColor: '#add8e6' }}>
+            <FontAwesomeIcon icon={faVoteYea} style={{ fontSize: '50px', marginRight: '8px' }} />
             <h2>2,000</h2>
             <p>Voters</p>
           </div>
+
           <div style={{ ...styles.statBox, backgroundColor: '#d3d3d3' }}>
+            <FontAwesomeIcon icon={faBriefcase} style={{ fontSize: '50px', marginRight: '8px' }} />
             <h2>2,000</h2>
             <p>Employ</p>
           </div>
+
           <div style={{ ...styles.statBox, backgroundColor: '#ffffe0' }}>
+            <FontAwesomeIcon icon={faHeart} style={{ fontSize: '50px', marginRight: '8px' }} />
             <h2>2,000</h2>
             <p>Civil Status</p>
           </div>
         </div>
-        
+
         <div style={styles.chartContainer}>
           <div style={styles.chartBox}>
             <Doughnut data={data.Certificate} />
@@ -114,14 +139,33 @@ const Dashboard = () => {
 
 const styles = {
   container: {
+    position: 'relative',
     padding: '20px',
     textAlign: 'center',
     marginLeft: '280px',
   },
-  header: {
+  headerWrapper: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
     marginBottom: '30px',
+  },
+  headerContent: {
+    flex: 1,
+    textAlign: 'center',
+  },
+  header: {
     fontSize: '60px',
     fontWeight: 'bold',
+    margin: 0,
+  },
+  miniCalendar: {
+    backgroundColor: '#fff',
+    padding: '5px 10px',
+    borderRadius: '8px',
+    boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+    marginTop: '30px',
+    marginRight: '10px',
   },
   statContainer: {
     display: 'flex',
@@ -131,7 +175,7 @@ const styles = {
     marginBottom: '50px',
   },
   statBox: {
-    width: '150px',
+    width: '180px',
     borderRadius: '10px',
     padding: '20px',
     boxShadow: '0 2px 10px rgba(0,0,0,0.3)',
@@ -141,7 +185,7 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-between',
     flexWrap: 'wrap',
-    gap: '10px',
+    gap: '20px',
     marginBottom: '50px',
   },
   chartBox: {
