@@ -135,6 +135,7 @@ class Project(models.Model):
 
 class BarangayOfficials(models.Model):
     id = models.AutoField(primary_key=True)
+    official_picture = models.ImageField(upload_to='official_pics/', null=True, blank=True)
     position = models.CharField(max_length=50)
     name = models.CharField(max_length=50)
     contact_number = models.CharField(max_length=11)
