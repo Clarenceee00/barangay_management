@@ -46,4 +46,4 @@ class ProjectSerializer(serializers.ModelSerializer):
 class BarangayOfficialsSerializer(serializers.ModelSerializer):
     class Meta:
         model = BarangayOfficials
-        fields = ('id', 'position', 'name', 'contact_number', 'address', 'term_start', 'term_end')
+        fields = ('id', 'official_picture', 'position', 'name', 'contact_number', 'address', 'term_start', 'term_end')
