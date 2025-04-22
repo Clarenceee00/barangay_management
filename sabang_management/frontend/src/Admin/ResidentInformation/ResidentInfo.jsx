@@ -2,7 +2,7 @@
 import React from 'react';
 import BackButton from "../../components/Back/Back";
 
-const ResidentInformationForm = () => {
+const ResidentInformationForm = ({ onClose }) => {
   return (
     <>
         <h1>RESIDENT INFORMATION</h1>
@@ -62,15 +62,15 @@ const ResidentInformationForm = () => {
             <div className="field-group">
               <label>Employment status:</label>
               <select>
-                <option value="male">Employed</option>
-                <option value="female">Unemployed</option>
+                <option value="employed">Employed</option>
+                <option value="unemployed">Unemployed</option>
               </select>
             </div>
             <div className="field-group">
               <label>Voters:</label>
               <select>
-                <option value="male">Voters</option>
-                <option value="female">Not Voters</option>
+                <option value="voter">Voter</option>
+                <option value="non-voter">Not Voter</option>
               </select>
             </div>
             <div className="field-group">
@@ -81,11 +81,10 @@ const ResidentInformationForm = () => {
               <label>Email:</label>
               <input type="email" />
             </div>
-            {/* Additional Fields as per your design */}
           </div>
           <div className="controls">
             <button className="save-button">Save</button>
-            <BackButton />
+            <button className="cancel-button" onClick={onClose}>Close</button>
           </div>
         </div>
  
@@ -195,7 +194,6 @@ const ResidentInformationForm = () => {
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            
             }
 
         .save-button {

@@ -1,6 +1,5 @@
-import BackButton from "../../Back/Back";
 import "./Style/Design.css"
-import barangayIcon from "../../../assets/Icon.jfif";
+import barangayIcon from "../../../assets/ICONNNSS.png";
 
 function BarangayClearance({ onClick = "Submit" }) {
     return (
@@ -15,7 +14,7 @@ function BarangayClearance({ onClick = "Submit" }) {
     <button className="submit-button" onClick={onClick}>
            Submit
     </button>
-    <BackButton />
+   
       </div>
       
     );

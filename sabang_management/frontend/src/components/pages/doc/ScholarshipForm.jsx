@@ -1,5 +1,4 @@
-import BackButton from "../../Back/Back";
-import barangayIcon from "../../../assets/Icon.jfif";
+import barangayIcon from "../../../assets/ICONNNSS.png";
 
 function ScholarshipForm({ onClick = "Submit" }) {
   return (
@@ -13,7 +12,6 @@ function ScholarshipForm({ onClick = "Submit" }) {
       <button className="submit-button" onClick={onClick}>
            Submit
            </button>
-           <BackButton />
     </div>
   );
 }

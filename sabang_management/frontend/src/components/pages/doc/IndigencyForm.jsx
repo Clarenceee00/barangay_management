@@ -1,10 +1,10 @@
 import "./Style/Indigency.css"
-import BackButton from "../../Back/Back";
-import barangayIcon from "../../../assets/Icon.jfif";
+import barangayIcon from "../../../assets/ICONNNSS.png";
 
 function IndigencyForm() {
     return (
       <div className="form-container">
+          
         <img src={barangayIcon} alt="Barangay Clearance" className="barangay-image" />
         <h2>INDIGENCY FORM</h2>
         <form>
@@ -26,7 +26,7 @@ function IndigencyForm() {
           </div>
           <button type="submit" className="submit-button">Submit</button>
         </form>
-        <BackButton />
+      
       </div>
     );
   }

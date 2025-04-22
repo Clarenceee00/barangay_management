@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
-import barangayIcon from "../../assets/Icon.jfif";
+import barangayIcon from "../../assets/ICONNNSS.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

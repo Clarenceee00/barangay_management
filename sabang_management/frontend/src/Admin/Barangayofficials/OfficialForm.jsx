@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import BackButton from "../../components/Back/Back";
 
 const OfficialForm = ({ onAddOfficial }) => {
   const [formData, setFormData] = useState({
@@ -58,6 +59,7 @@ const OfficialForm = ({ onAddOfficial }) => {
         <label>End of Term:</label>
         <input type="date" name="endOfTerm" required onChange={handleChange} />
         <button type="submit">Add Official</button>
+        <BackButton />
       </form>
     </div>
   );
