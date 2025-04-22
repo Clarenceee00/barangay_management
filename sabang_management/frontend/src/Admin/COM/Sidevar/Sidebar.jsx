@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Sidebar.css"; 
+import barangayIcon from "../../../assets/ICONNNSS.png";
 
 
 const Sidebar = () => {
   return (
     <div className="sidebar">
 
-      <img src="/src/assets/Icon.jfif" className="Icon" />
+     <img src={barangayIcon} alt="Barangay Clearance" className="barangay-image"  style={{width: "100px"}}/>
       <h2>Barangay Sabang</h2>
       <ul>
          <li><Link to="/Dashboard">DashBoard Analytics</Link></li>

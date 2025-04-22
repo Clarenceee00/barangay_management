@@ -1,69 +1,71 @@
-.Official {
-    padding: 50px;
-    width: 1000px;
-    margin: auto;
-    background: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    position: absolute;
-    top: 80px;
-    min-height: 800px;
-    left: 450px;
-    
-}
-
-.Head {
-    text-align: center;
-    font-size: 44px;
-    font-weight: bold;
-    margin-bottom: 20px;    
-}
-
-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    margin: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 5px;
-    overflow: hidden;
-    
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-}
-
-th {
-    background-color: #007bff;
-    color: white;
-}
-
-td button {
-    background-color: #28a745;
-    margin-right: 5px;
-}
-
-td button:last-child {
-    background-color: #dc3545;
-}
-
-td button:hover {
-    opacity: 0.8;
-}
-
+body {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    margin: 0; 
+  }
+  
+  .Official {
+      padding: 50px;
+      width: 1000px;
+      background: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      min-height: 800px;
+  }
+  
+  .Head {
+      text-align: center;
+      font-size: 44px;
+      font-weight: bold;
+      margin-bottom: 20px;    
+  }
+  
+  button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      margin: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+  }
+  
+  button:hover {
+      background-color: #0056b3;
+  }
+  
+  table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 5px;
+      overflow: hidden;
+  }
+  
+  th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+  }
+  
+  th {
+      background-color: #007bff;
+      color: white;
+  }
+  
+  td button {
+      background-color: #28a745;
+      margin-right: 5px;
+  }
+  
+  td button:last-child {
+      background-color: #dc3545;
+  }
+  
+  td button:hover {
+      opacity: 0.8;
+  }
+  

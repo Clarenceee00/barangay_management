@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nav-container">
         <div style={{ display: "flex", alignItems: "center" }}>
-      <img src={barangayIcon} alt="Barangay Clearance" className="barangay-image"  style={{width: "60px"}}/>
+      <img src={barangayIcon} alt="Barangay Clearance" className="barangay-image"  style={{width: "70px"}}/>
         <h2 className="Barangay" style={{ color: "orange"}} >Barangay Sabang</h2>
         </div>
         <ul className={isOpen ? "nav-menu active" : "nav-menu"}>

@@ -1,7 +1,7 @@
 import "./Style/Indigency.css"
 import barangayIcon from "../../../assets/ICONNNSS.png";
 
-function IndigencyForm() {
+function IndigencyForm({ onClick = "Submit", closeForm }) {
     return (
       <div className="form-container">
           
@@ -24,7 +24,8 @@ function IndigencyForm() {
               <input type="radio" name="gender" value="Male" /> Male
             </label>
           </div>
-          <button type="submit" className="submit-button">Submit</button>
+          <button type="submit" className="submit-button" onClick={onClick}>Submit</button>
+          <button className="close-button" onClick={closeForm}>Close</button>
         </form>
       
       </div>

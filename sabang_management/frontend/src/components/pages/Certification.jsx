@@ -34,36 +34,34 @@ export const Certification = () => {
         {/* Conditional Rendering of Forms */}
         {selectedForm === "clearance" && (
           <div className="formpopup">
-            <BarangayClearance onClick={closeForm} />
-            <button onClick={closeForm} className="close-button">Close</button>
+            <BarangayClearance onClick={closeForm} closeForm={closeForm} />
+            
           </div>
         )}
 
         {selectedForm === "scholarship" && (
           <div className="formpopup">
-            <IndigencyScholarship onClick={closeForm} />
-            <button onClick={closeForm} className="close-button">Close</button>
+            <IndigencyScholarship onClick={closeForm} closeForm={closeForm}/>
           </div>
         )}
 
         {selectedForm === "residency" && (
           <div className="formpopup">
-            <ResidencyForm onClick={closeForm} />
-            <button onClick={closeForm} className="close-button">Close</button>
+            <ResidencyForm onClick={closeForm} closeForm={closeForm}/>
+         
           </div>
         )}
 
         {selectedForm === "jobseeker" && (
           <div className="formpopup">
-            <JobSeekerForm onClick={closeForm} />
-            <button onClick={closeForm} className="close-button">Close</button>
+            <JobSeekerForm onClick={closeForm} closeForm={closeForm}/>
+           
           </div>
         )}
 
         {selectedForm === "indigency" && (
           <div className="formpopup">
-            <IndigencyForm onClick={closeForm} />
-            <button onClick={closeForm} className="close-button">Close</button>
+            <IndigencyForm onClick={closeForm} closeForm={closeForm}/>
           </div>
         )}
       </div>

@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import BackButton from "../../components/Back/Back";
 
-const OfficialForm = ({ onAddOfficial }) => {
+const OfficialForm = ({ onAddOfficial, onClose }) => { // Add onClose prop for the close action
   const [formData, setFormData] = useState({
     position: '',
     name: '',
@@ -13,8 +11,6 @@ const OfficialForm = ({ onAddOfficial }) => {
     endOfTerm: '',
     picture: null, // Add picture to formData
   });
-
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value, type, files } = e.target;
@@ -38,8 +34,8 @@ const OfficialForm = ({ onAddOfficial }) => {
           'Content-Type': 'multipart/form-data', // Set the content type for file upload
         },
       });
-      onAddOfficial(response.data);
-      navigate('/official'); // Babalik sa officials page
+      onAddOfficial(response.data); // Pass the added official back to parent
+      onClose(); // Close the modal after submission
     } catch (error) {
       console.error("Error adding official:", error);
     }
@@ -49,7 +45,10 @@ const OfficialForm = ({ onAddOfficial }) => {
     <div className="form-container">
       <h2>Add Official</h2>
       <form onSubmit={handleSubmit}>
-      <input type="file" name="picture" accept="image/*" onChange={handleChange} /> {/* File input for picture */}
+        {/* File input for picture */}
+        <input type="file" name="picture" accept="image/*" onChange={handleChange} /> 
+        
+        {/* Other form fields */}
         <input type="text" name="position" placeholder="Position" required onChange={handleChange} />
         <input type="text" name="name" placeholder="Name" required onChange={handleChange} />
         <input type="tel" name="contact" placeholder="Contact" required onChange={handleChange} />
@@ -58,8 +57,44 @@ const OfficialForm = ({ onAddOfficial }) => {
         <input type="date" name="startOfTerm" required onChange={handleChange} />
         <label>End of Term:</label>
         <input type="date" name="endOfTerm" required onChange={handleChange} />
-        <button type="submit">Add Official</button>
-        <BackButton />
+
+        {/* Submit and Close buttons */}
+        <div style={{ marginTop: '10px' }}>
+          <button
+            type="submit"
+            style={{
+              backgroundColor: '#4CAF50', // Green background
+              color: 'white', // White text
+              border: 'none',
+              padding: '10px 20px',
+              fontSize: '16px',
+              cursor: 'pointer',
+              borderRadius: '5px',
+              display: 'block', // Make it a block-level element
+              width: '100%', // Full width
+              marginBottom: '10px', // Space between buttons
+            }}
+          >
+            Add Official
+          </button>
+          <button
+            type="button"
+            onClick={onClose}
+            style={{
+              backgroundColor: '#E3242B', // Red background
+              color: 'white', // White text
+              border: 'none',
+              padding: '10px 20px',
+              fontSize: '16px',
+              cursor: 'pointer',
+              borderRadius: '5px',
+              display: 'block', // Make it a block-level element
+              width: '100%', // Full width
+            }}
+          >
+            Close
+          </button>
+        </div>
       </form>
     </div>
   );

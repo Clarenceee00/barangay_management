@@ -1,6 +1,6 @@
 import barangayIcon from "../../../assets/ICONNNSS.png";
 
-function ScholarshipForm({ onClick = "Submit" }) {
+function ScholarshipForm({ onClick = "Submit",closeForm }) {
   return (
     <div className="form-container">
       <img src={barangayIcon} alt="Barangay Clearance" className="barangay-image" />
@@ -9,9 +9,8 @@ function ScholarshipForm({ onClick = "Submit" }) {
       <label>Age: <input type="number" /></label>
       <label>Trabaho: <input type="text" /></label>
       <label>Kita kada Buwan: <input type="text" /></label>
-      <button className="submit-button" onClick={onClick}>
-           Submit
-           </button>
+      <button className="submit-button" onClick={onClick}>Submit </button>
+     <button className="close-button" onClick={closeForm}>Close</button>
     </div>
   );
 }
