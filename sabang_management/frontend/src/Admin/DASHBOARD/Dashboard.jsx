@@ -3,7 +3,7 @@ import { Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import Sidebar from '../COM/Sidevar/Sidebar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFileAlt, faUsers, faVoteYea, faBriefcase, faHeart, faShieldAlt } from '@fortawesome/free-solid-svg-icons';
+import { faFileAlt, faUsers, faVoteYea, faBriefcase, faHeart } from '@fortawesome/free-solid-svg-icons';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -55,9 +55,20 @@ const data = {
     labels: ['Single', 'Married', 'Divorced', 'Solo Parents'],
     datasets: [
       {
-        data: [50, 30, 20, 15], // Adding Solo Parents to the data array
-        backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#e6ccff'], // Added color for Solo Parents
+        data: [50, 30, 20, 15],
+        backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#e6ccff'],
         hoverBackgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#e6ccff'],
+      },
+    ],
+  },
+  Officers: {
+    labels: ['Kapitan', 'Kagawad', 'Tanod', 'SK Chairman', 'Secretary', 'Treasurer'],
+    datasets: [
+      {
+        label: 'Barangay Officers',
+        data: [1, 7, 10, 1, 1, 1],
+        backgroundColor: ['#ff9999', '#66b3ff', '#99ff99', '#ffcc99', '#c2c2f0', '#ffb3e6'],
+        hoverBackgroundColor: ['#ff9999', '#66b3ff', '#99ff99', '#ffcc99', '#c2c2f0', '#ffb3e6'],
       },
     ],
   },
@@ -80,8 +91,8 @@ const Dashboard = () => {
               onChange={(date) => setSelectedYear(date)}
               dateFormat="yyyy"
               showYearPicker
-              yearItemNumber={12}  // Limit the number of years shown at once
-              calendarClassName="custom-datepicker"  // Custom class for styling the calendar
+              yearItemNumber={12}
+              calendarClassName="custom-datepicker"
             />
           </div>
         </div>
@@ -92,19 +103,16 @@ const Dashboard = () => {
             <h2>100</h2>
             <p>Population</p>
           </div>
-
           <div style={{ ...styles.statBox, backgroundColor: '#add8e6' }}>
             <FontAwesomeIcon icon={faVoteYea} style={{ fontSize: '50px', marginRight: '8px' }} />
             <h2>100</h2>
             <p>Voters</p>
           </div>
-
           <div style={{ ...styles.statBox, backgroundColor: '#d3d3d3' }}>
             <FontAwesomeIcon icon={faBriefcase} style={{ fontSize: '50px', marginRight: '8px' }} />
             <h2>100</h2>
             <p>Employ</p>
           </div>
-
           <div style={{ ...styles.statBox, backgroundColor: '#ffffe0' }}>
             <FontAwesomeIcon icon={faHeart} style={{ fontSize: '50px', marginRight: '8px' }} />
             <h2>100</h2>
@@ -116,6 +124,12 @@ const Dashboard = () => {
             <p>Barangay Certificate</p>
           </div>
 
+          {/* New stat box for Barangay Officials */}
+          <div style={{ ...styles.statBox, backgroundColor: '#ffeb99' }}>
+            <FontAwesomeIcon icon={faBriefcase} style={{ fontSize: '50px', marginRight: '8px' }} />
+            <h2>21</h2>
+            <p>Barangay Officials</p>
+          </div>
         </div>
 
         <div style={styles.chartContainer}>
@@ -134,6 +148,9 @@ const Dashboard = () => {
           <div style={styles.chartBox}>
             <Doughnut data={data.Certificate} />
           </div>
+          <div style={styles.chartBox}>
+            <Doughnut data={data.Officers} />
+          </div>
         </div>
       </div>
     </>
@@ -145,13 +162,13 @@ const styles = {
     position: 'relative',
     padding: '20px',
     textAlign: 'center',
-    marginLeft: '280px',
+    marginLeft: '10px',
   },
   headerWrapper: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    marginBottom: '30px',
+    marginBottom: '100px',
   },
   headerContent: {
     flex: 1,
@@ -161,14 +178,16 @@ const styles = {
     fontSize: '60px',
     fontWeight: 'bold',
     margin: 0,
+    marginTop: '90px',
+    marginLeft: '380px',
   },
   miniCalendar: {
     backgroundColor: 'lightgray',
     padding: '5px 10px',
     borderRadius: '8px',
     boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
-    marginTop: '30px',
-    marginRight: '10px',
+    marginTop: '100px',
+    marginRight: '30px',
     width: '180px',
   },
   statContainer: {
@@ -177,6 +196,7 @@ const styles = {
     flexWrap: 'wrap',
     gap: '20px',
     marginBottom: '50px',
+    marginLeft: '200px',
   },
   statBox: {
     width: '180px',
@@ -187,10 +207,13 @@ const styles = {
   },
   chartContainer: {
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
+    alignItems: 'center',
     flexWrap: 'wrap',
-    gap: '20px',
+    gap: '30px',
     marginBottom: '50px',
+    paddingLeft: '260px',
+    paddingRight: '20px',
   },
   chartBox: {
     width: '250px',
