@@ -49,8 +49,8 @@ const BarangayCert = () => {
                   <button onClick={() => updateStatus(cert.id, "Approved")} className="approved">
                     Approved
                   </button>
-                  <button onClick={() => updateStatus(cert.id, "Complete")} className="complete">
-                    Complete
+                  <button onClick={() => updateStatus(cert.id, "Ready to Pick Up")} className="completed">
+                    Completed
                   </button>
                   <button onClick={() => updateStatus(cert.id, "Not Approved")} className="not-approved">
                     Not Approved
@@ -107,16 +107,16 @@ const BarangayCert = () => {
               margin: 2px;
             }
             .pending {
-              background: rgb(15, 129, 243);
+              background:rgb(243, 158, 11);
             }
             .approved {
-              background: rgb(241, 14, 14);
+              background: rgb(17, 105, 236);
             }
             .complete {
               background: rgb(14, 241, 14);
             }
             .not-approved {
-              background: rgb(3, 2, 2);
+              background: rgb(255, 0, 0);
             }
           `}
         </style>

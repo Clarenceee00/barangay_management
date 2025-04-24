@@ -26,10 +26,16 @@ const WaitingArea = () => {
           </thead>
           <tbody>
             <tr>
-              <td>1</td>
+              <td>1.</td>
               <td>{userRequest.name}</td>
               <td>{userRequest.form}</td>
-              <td>{userRequest.status}</td>
+              <td>
+                <div className="status-cell">
+                  <span className={`status-badge ${userRequest.status.toLowerCase()}`}>
+                    {userRequest.status}
+                  </span>
+                </div>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -37,7 +43,7 @@ const WaitingArea = () => {
         <style>
           {`
             .waiting-area {
-               position: absolute;
+              position: absolute;
               top: 100px; /* Nasa taas */
               left: 50%;
               transform: translateX(-50%);
@@ -57,7 +63,7 @@ const WaitingArea = () => {
             }
             th, td {
               border: 1px solid #ddd;
-              padding: 10px;
+              padding: 11px;
               text-align: left;
             }
             th {
@@ -66,6 +72,33 @@ const WaitingArea = () => {
             }
             tr:nth-child(even) {
               background: #f2f2f2;
+            }
+            .status-cell {
+              text-align: left;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+            }
+            .status-badge {
+              display: inline-block;
+              padding: 8px 14px;
+              border-radius: 20px;
+              font-weight: 600;
+              font-size: 16px;
+              color: #fff;
+              text-transform: capitalize;
+            }
+            .status-badge.pending {
+              background-color: rgb(243, 158, 11);
+            }
+            .status-badge.approved {
+              background-color:rgb(17, 105, 236);
+            }
+            .status-badge.complted {
+              background-color:rgb(0, 255, 0);
+            }
+            .status-badge.notapproved {
+              background-color:rgb(255, 0, 0);
             }
           `}
         </style>
