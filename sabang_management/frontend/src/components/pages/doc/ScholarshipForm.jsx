@@ -10,7 +10,7 @@ function ScholarshipForm({ onClick = "Submit",closeForm }) {
       <label>Trabaho: <input type="text" /></label>
       <label>Kita kada Buwan: <input type="text" /></label>
       <button className="submit-button" onClick={onClick}>Submit </button>
-     <button className="close-button" onClick={closeForm}>Close</button>
+      <button className="close-button" onClick={closeForm}>Close</button>
     </div>
   );
 }
