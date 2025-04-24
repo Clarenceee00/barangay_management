@@ -1,10 +1,9 @@
-// src/Dashboard.jsx
 import React, { useState } from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import Sidebar from '../COM/Sidevar/Sidebar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFileAlt, faUsers, faVoteYea, faBriefcase, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faFileAlt, faUsers, faVoteYea, faBriefcase, faHeart, faShieldAlt } from '@fortawesome/free-solid-svg-icons';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -25,9 +24,10 @@ const data = {
     labels: ['BarangayIndigency', 'BarangayClearance', 'IndengencyScholarship', 'Job&Oath', 'CertificateOfResidency'],
     datasets: [
       {
+        label: 'Barangay Certificate Request',
         data: [70, 30, 10, 20, 40],
         backgroundColor: ['#4bc0c0', '#36a2eb', '#ffce56', '#ff6384', '#9966ff'],
-        hoverBackgroundColor: ['#4bc0c0', '#36a2eb', '#ffce56', '#ff6384', '#9966ff'],
+        borderRadius: 5
       },
     ],
   },
@@ -52,19 +52,19 @@ const data = {
     ],
   },
   CivilStatus: {
-    labels: ['Single', 'Married', 'Divorced'],
+    labels: ['Single', 'Married', 'Divorced', 'Solo Parents'],
     datasets: [
       {
-        data: [50, 30, 20],
-        backgroundColor: ['#ff6384', '#36a2eb', '#ffce56'],
-        hoverBackgroundColor: ['#ff6384', '#36a2eb', '#ffce56'],
+        data: [50, 30, 20, 15], // Adding Solo Parents to the data array
+        backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#e6ccff'], // Added color for Solo Parents
+        hoverBackgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#e6ccff'],
       },
     ],
   },
 };
 
 const Dashboard = () => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedYear, setSelectedYear] = useState(new Date());
 
   return (
     <>
@@ -76,20 +76,17 @@ const Dashboard = () => {
           </div>
           <div style={styles.miniCalendar}>
             <DatePicker
-              selected={selectedDate}
-              onChange={(date) => setSelectedDate(date)}
-              dateFormat="MMMM d, yyyy"
+              selected={selectedYear}
+              onChange={(date) => setSelectedYear(date)}
+              dateFormat="yyyy"
+              showYearPicker
+              yearItemNumber={12}  // Limit the number of years shown at once
+              calendarClassName="custom-datepicker"  // Custom class for styling the calendar
             />
           </div>
         </div>
 
         <div style={styles.statContainer}>
-          <div style={{ ...styles.statBox, backgroundColor: '#98ff98' }}>
-            <FontAwesomeIcon icon={faFileAlt} style={{ fontSize: '50px', marginRight: '8px' }} />
-            <h2>170</h2>
-            <p>Barangay Certificate</p>
-          </div>
-
           <div style={{ ...styles.statBox, backgroundColor: '#ffcccc' }}>
             <FontAwesomeIcon icon={faUsers} style={{ fontSize: '50px', marginRight: '8px' }} />
             <h2>100</h2>
@@ -113,12 +110,15 @@ const Dashboard = () => {
             <h2>100</h2>
             <p>Civil Status</p>
           </div>
+          <div style={{ ...styles.statBox, backgroundColor: '#98ff98' }}>
+            <FontAwesomeIcon icon={faFileAlt} style={{ fontSize: '50px', marginRight: '8px' }} />
+            <h2>170</h2>
+            <p>Barangay Certificate</p>
+          </div>
+
         </div>
 
         <div style={styles.chartContainer}>
-          <div style={styles.chartBox}>
-            <Doughnut data={data.Certificate} />
-          </div>
           <div style={styles.chartBox}>
             <Doughnut data={data.population} />
           </div>
@@ -130,6 +130,9 @@ const Dashboard = () => {
           </div>
           <div style={styles.chartBox}>
             <Doughnut data={data.CivilStatus} />
+          </div>
+          <div style={styles.chartBox}>
+            <Doughnut data={data.Certificate} />
           </div>
         </div>
       </div>
@@ -166,6 +169,7 @@ const styles = {
     boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
     marginTop: '30px',
     marginRight: '10px',
+    width: '180px',
   },
   statContainer: {
     display: 'flex',
@@ -194,7 +198,7 @@ const styles = {
     borderRadius: '10px',
     padding: '20px',
     boxShadow: '0 2px 10px rgba(0,0,0,0.2)',
-  }
+  },
 };
 
 export default Dashboard;

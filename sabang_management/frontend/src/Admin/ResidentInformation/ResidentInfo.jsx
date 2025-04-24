@@ -50,6 +50,7 @@ const ResidentInformationForm = ({ onClose }) => {
                 <option value="single">Single</option>
                 <option value="married">Married</option>
                 <option value="divorced">Divorced</option>
+                <option value="Soloparents">Solo Parents</option>
               </select>
             </div>
             <div className="field-group">
