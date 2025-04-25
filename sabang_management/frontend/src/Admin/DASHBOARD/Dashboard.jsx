@@ -99,58 +99,44 @@ const Dashboard = () => {
 
         <div style={styles.statContainer}>
           <div style={{ ...styles.statBox, backgroundColor: '#ffcccc' }}>
-            <FontAwesomeIcon icon={faUsers} style={{ fontSize: '50px', marginRight: '8px' }} />
+            <FontAwesomeIcon icon={faUsers} style={styles.icon} />
             <h2>100</h2>
             <p>Population</p>
           </div>
           <div style={{ ...styles.statBox, backgroundColor: '#add8e6' }}>
-            <FontAwesomeIcon icon={faVoteYea} style={{ fontSize: '50px', marginRight: '8px' }} />
+            <FontAwesomeIcon icon={faVoteYea} style={styles.icon} />
             <h2>100</h2>
             <p>Voters</p>
           </div>
           <div style={{ ...styles.statBox, backgroundColor: '#d3d3d3' }}>
-            <FontAwesomeIcon icon={faBriefcase} style={{ fontSize: '50px', marginRight: '8px' }} />
+            <FontAwesomeIcon icon={faBriefcase} style={styles.icon} />
             <h2>100</h2>
             <p>Employ</p>
           </div>
           <div style={{ ...styles.statBox, backgroundColor: '#ffffe0' }}>
-            <FontAwesomeIcon icon={faHeart} style={{ fontSize: '50px', marginRight: '8px' }} />
+            <FontAwesomeIcon icon={faHeart} style={styles.icon} />
             <h2>100</h2>
             <p>Civil Status</p>
           </div>
           <div style={{ ...styles.statBox, backgroundColor: '#98ff98' }}>
-            <FontAwesomeIcon icon={faFileAlt} style={{ fontSize: '50px', marginRight: '8px' }} />
+            <FontAwesomeIcon icon={faFileAlt} style={styles.icon} />
             <h2>170</h2>
             <p>Barangay Certificate</p>
           </div>
-
-          {/* New stat box for Barangay Officials */}
           <div style={{ ...styles.statBox, backgroundColor: '#ffeb99' }}>
-            <FontAwesomeIcon icon={faBriefcase} style={{ fontSize: '50px', marginRight: '8px' }} />
+            <FontAwesomeIcon icon={faBriefcase} style={styles.icon} />
             <h2>21</h2>
             <p>Barangay Officials</p>
           </div>
         </div>
 
         <div style={styles.chartContainer}>
-          <div style={styles.chartBox}>
-            <Doughnut data={data.population} />
-          </div>
-          <div style={styles.chartBox}>
-            <Doughnut data={data.Voters} />
-          </div>
-          <div style={styles.chartBox}>
-            <Doughnut data={data.Employ} />
-          </div>
-          <div style={styles.chartBox}>
-            <Doughnut data={data.CivilStatus} />
-          </div>
-          <div style={styles.chartBox}>
-            <Doughnut data={data.Certificate} />
-          </div>
-          <div style={styles.chartBox}>
-            <Doughnut data={data.Officers} />
-          </div>
+          <div style={styles.chartBox}><Doughnut data={data.population} /></div>
+          <div style={styles.chartBox}><Doughnut data={data.Voters} /></div>
+          <div style={styles.chartBox}><Doughnut data={data.Employ} /></div>
+          <div style={styles.chartBox}><Doughnut data={data.CivilStatus} /></div>
+          <div style={styles.chartBox}><Doughnut data={data.Certificate} /></div>
+          <div style={styles.chartBox}><Doughnut data={data.Officers} /></div>
         </div>
       </div>
     </>
@@ -162,7 +148,7 @@ const styles = {
     position: 'relative',
     padding: '20px',
     textAlign: 'center',
-    marginLeft: '10px',
+    marginLeft: '250px', // Offset to not overlap the sidebar
   },
   headerWrapper: {
     display: 'flex',
@@ -179,7 +165,6 @@ const styles = {
     fontWeight: 'bold',
     margin: 0,
     marginTop: '90px',
-    marginLeft: '380px',
   },
   miniCalendar: {
     backgroundColor: 'lightgray',
@@ -196,7 +181,6 @@ const styles = {
     flexWrap: 'wrap',
     gap: '20px',
     marginBottom: '50px',
-    marginLeft: '200px',
   },
   statBox: {
     width: '180px',
@@ -205,6 +189,10 @@ const styles = {
     boxShadow: '0 2px 10px rgba(0,0,0,0.3)',
     textAlign: 'center',
   },
+  icon: {
+    fontSize: '50px',
+    marginBottom: '10px',
+  },
   chartContainer: {
     display: 'flex',
     justifyContent: 'center',
@@ -212,8 +200,6 @@ const styles = {
     flexWrap: 'wrap',
     gap: '30px',
     marginBottom: '50px',
-    paddingLeft: '260px',
-    paddingRight: '20px',
   },
   chartBox: {
     width: '250px',
