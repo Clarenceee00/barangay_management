@@ -111,7 +111,7 @@ const Dashboard = () => {
           <div style={{ ...styles.statBox, backgroundColor: '#d3d3d3' }}>
             <FontAwesomeIcon icon={faBriefcase} style={styles.icon} />
             <h2>100</h2>
-            <p>Employ</p>
+            <p>Employment</p>
           </div>
           <div style={{ ...styles.statBox, backgroundColor: '#ffffe0' }}>
             <FontAwesomeIcon icon={faHeart} style={styles.icon} />
