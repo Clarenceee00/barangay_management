@@ -49,7 +49,7 @@ const BarangayCert = () => {
                                         className="status-dropdown"
                                     >
                                         <option value="Approved">Approved</option>
-                                        <option value="Ready to Pick Up">Ready to Pick Up</option>
+                                        <option value="Ready to Pick Up">Completed</option>
                                         <option value="Not Approved">Not Approved</option>
                                     </select>
                                 </td>
