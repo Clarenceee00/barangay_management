@@ -69,7 +69,7 @@ const EditProfile = () => {
 
           .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 80px;
             margin-top: 1800px; 

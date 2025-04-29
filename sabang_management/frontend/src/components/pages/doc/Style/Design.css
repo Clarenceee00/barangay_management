@@ -123,4 +123,21 @@ body {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   }
+  .error-text {
+    color: red;
+    margin-top: 5px;
+  }
+  
+  .photo-preview {
+    margin-top: 10px;
+  }
+  
+  .preview-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
   

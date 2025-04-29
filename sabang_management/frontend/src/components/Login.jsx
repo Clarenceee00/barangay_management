@@ -5,25 +5,25 @@ import assets from "../assets/Icon.jfif";
 
 const Login = () => {
   const navigate = useNavigate();
-  const [credentials, setCredentials] = useState({ username: "", password: "" });
+  const [credentials, setCredentials] = useState({ email: "", password: "" });
 
   const handleLogin = (event) => {
     event.preventDefault(); // Prevent page reload
 
-    // Dummy authentication logic
-    if (credentials.username === "Pentavision" && credentials.password === "password") {
-      localStorage.setItem("isAuthenticated", "true"); // Store auth state
-      navigate("/home"); // Redirect to Landing Page
-    }else if (credentials.username === "admin" && credentials.password === "admin123") {
-      localStorage.setItem("isAuthenticated", "true"); 
-      navigate("/dashboard");  
+    // Dummy authentication logic (replace with real validation as needed)
+    if (credentials.email === "Pentavision@gmail.com" && credentials.password === "password") {
+      localStorage.setItem("isAuthenticated", "true");
+      navigate("/home");
+    } else if (credentials.email === "admin@gmail.com" && credentials.password === "admin123") {
+      localStorage.setItem("isAuthenticated", "true");
+      navigate("/dashboard");
     } else {
       alert("Invalid credentials!");
     }
   };
 
   return (
-    <div  style={{
+    <div style={{
       position: "absolute",
       top: 0,
       left: 0,
@@ -36,15 +36,15 @@ const Login = () => {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      }}>
+    }}>
       
       <form className="auth-form" onSubmit={handleLogin}>
         <h2>Login</h2>
         <input
-          type="text"
-          placeholder="Username"
-          value={credentials.username}
-          onChange={(e) => setCredentials({ ...credentials, username: e.target.value })}
+          type="email"
+          placeholder="Email"
+          value={credentials.email}
+          onChange={(e) => setCredentials({ ...credentials, email: e.target.value })}
           required
         />
         <input

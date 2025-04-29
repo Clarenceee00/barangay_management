@@ -48,4 +48,46 @@
   .submit-button:hover {
     background: rgb(13, 6, 78);
   }
+  .error-text {
+    color: red;
+    margin-top: 5px;
+  }
+  
+  .photo-preview {
+    margin-top: 10px;
+  }
+  
+  .preview-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  /* Error Text */
+.error-text {
+  color: red;
+  margin-top: 5px;
+}
+
+/* Photo Upload and Preview */
+.photo-preview {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.preview-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.gender {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
   
