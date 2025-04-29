@@ -39,6 +39,8 @@ const ContactUs = () => {
               <p><strong>Mobile:</strong> <a href="tel:+09753086265">0975 308 6265</a></p>
               <p><strong>Facebook Page:</strong> <a href="https://www.facebook.com/KapitanJangoNicolas" target="_blank" rel="noopener noreferrer">Kapitan Jango Nicolas</a></p>
               <p><strong>Email:</strong> <a href="mailto:teamjango2023@gmail.com">teamjango2023@gmail.com</a></p>
+              <p><strong>Address:</strong> Mabini Street, Barangay Sabang, Baliwag, Bulacan, Philippines</p>
+
             </section>
     
             <section>

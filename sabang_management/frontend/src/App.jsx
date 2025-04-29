@@ -20,7 +20,7 @@ import ResidentInformationTable from "./Admin/ResidentInformation/ResidentTable.
 import WaitingArea from "./components/pages/doc/WaitingArea.jsx"
 import Landingpage from "./components/pages/LandingPage/Landingpage.jsx";
 import LandingContact from "./components/pages/LandingPage/Contactlanding.jsx";
-
+import EditProfile from "./components/pages/doc/EditUserProfile.jsx";
 
 function App() {
   return (
@@ -47,6 +47,7 @@ function App() {
        <Route path="/Process" element={<WaitingArea/>} />
        <Route path="/" element={<Landingpage/>} />
        <Route path="/contact" element={<LandingContact/>} />
+       <Route path="/EditProfile" element={<EditProfile/>} />
       
       
        

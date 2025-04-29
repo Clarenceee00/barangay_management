@@ -61,7 +61,7 @@ const ResidentInformationTable = () => {
                 <td>1990-01-01</td>
                 <td>
                   <button className="edit-button" onClick={() => openEditModal({ id: 123456, name: "Juan Dela Cruz", contact: "09123456789", address: "Baliuag, Bulacan", birthdate: "1990-01-01" })}>Edit</button>
-                  <button className="delete-button" onClick={() => handleDelete(123456)}>Delete</button>
+                  <button className="delete-button" onClick={() => handleDelete(123456)}>Archive</button>
                 </td>
               </tr>
               <tr>
@@ -72,7 +72,7 @@ const ResidentInformationTable = () => {
                 <td>2003-12-12</td>
                 <td>
                   <button className="edit-button" onClick={() => openEditModal({ id: 9090, name: "Kimberly Bernardo", contact: "09123456789", address: "Baliuag, Bulacan", birthdate: "2003-12-12" })}>Edit</button>
-                  <button className="delete-button" onClick={() => handleDelete(9090)}>Delete</button>
+                  <button className="delete-button" onClick={() => handleDelete(9090)}>Archive</button>
                 </td>
               </tr>
             </tbody>
@@ -160,7 +160,7 @@ const ResidentInformationTable = () => {
       }
 
       .delete-button {
-        background-color: #dc3545;
+        background-color:rgb(229, 128, 138);
       }
 
       td button:hover {

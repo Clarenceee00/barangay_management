@@ -1,15 +1,23 @@
+/* Set default styles for html and body */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
 
-
-/* Centering the form */
-body {
+/* Container that covers the whole page */
+.page-container {
+    min-height: 100vh;
+    background-image: url('/src/assets/Barangay.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    height: 100%;
-     margin: 0;
-     padding: 0;
-      
+    padding: 50px 0; /* top and bottom padding */
+    overflow-y: auto; /* allow scrolling */
 }
 
 /* Form Styling */
@@ -18,13 +26,17 @@ body {
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0px 7px 44px 0px rgba(0,0,0,1);
-    width: 350px;
+    width: 90%;
+    max-width: 450px;
     text-align: center;
+    overflow-y: auto; /* optional: if form gets very long */
+    max-height: 100%;
 }
 
-/* Input Fields */
-.auth-form input {
-    width: 90%;
+/* Inputs and Selects */
+.auth-form input,
+.auth-form select {
+    width: 100%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
@@ -32,9 +44,9 @@ body {
     font-size: 16px;
 }
 
-/* Buttons */
+/* Button */
 .auth-form button {
-    width: 90%;
+    width: 100%;
     padding: 10px;
     background-color: #007bff;
     color: white;
@@ -49,7 +61,7 @@ body {
     background-color: #0056b3;
 }
 
-/* Link for switching between Login and Sign Up */
+/* Link style */
 .auth-form p {
     margin-top: 10px;
 }
