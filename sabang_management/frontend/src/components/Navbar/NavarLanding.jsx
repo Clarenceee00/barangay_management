@@ -12,7 +12,7 @@ const NavbarLanding = () => {
       <div className="nav-container">
         <div style={{ display: "flex", alignItems: "center" }}>
       <img src={barangayIcon} alt="Barangay Clearance" className="barangay-image"  style={{width: "70px"}}/>
-        <h2 className="Barangay" style={{ color: "orange"}} >Barangay Sabang</h2>
+        <h2 className="Barangay" style={{ color: "#ffffff"}} >Barangay Sabang</h2>
         </div>
         <ul className={isOpen ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">
