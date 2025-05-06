@@ -1,13 +1,29 @@
 import React, { useState } from 'react';
-import { Doughnut } from 'react-chartjs-2';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Pie, Bar } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  ArcElement,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+  Tooltip,
+  Legend
+} from 'chart.js';
 import Sidebar from '../COM/Sidevar/Sidebar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFileAlt, faUsers, faVoteYea, faBriefcase, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faUsers, faVoteYea, faBriefcase } from '@fortawesome/free-solid-svg-icons';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+// Register chart components
+ChartJS.register(
+  ArcElement,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+  Tooltip,
+  Legend
+);
 
 const data = {
   population: {
@@ -17,17 +33,6 @@ const data = {
         data: [58, 42],
         backgroundColor: ['#36a2eb', '#ff6384'],
         hoverBackgroundColor: ['#36a2eb', '#ff6384'],
-      },
-    ],
-  },
-  Certificate: {
-    labels: ['BarangayIndigency', 'BarangayClearance', 'IndengencyScholarship', 'Job&Oath', 'CertificateOfResidency'],
-    datasets: [
-      {
-        label: 'Barangay Certificate Request',
-        data: [70, 30, 10, 20, 40],
-        backgroundColor: ['#4bc0c0', '#36a2eb', '#ffce56', '#ff6384', '#9966ff'],
-        borderRadius: 5
       },
     ],
   },
@@ -51,24 +56,14 @@ const data = {
       },
     ],
   },
-  CivilStatus: {
-    labels: ['Single', 'Married', 'Divorced', 'Solo Parents'],
+  Age: {
+    labels: ['0-17', '18-35', '36-59', '60+'],
     datasets: [
       {
-        data: [50, 30, 20, 15],
-        backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#e6ccff'],
-        hoverBackgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#e6ccff'],
-      },
-    ],
-  },
-  Officers: {
-    labels: ['Kapitan', 'Kagawad', 'Tanod', 'SK Chairman', 'Secretary', 'Treasurer'],
-    datasets: [
-      {
-        label: 'Barangay Officers',
-        data: [1, 7, 10, 1, 1, 1],
-        backgroundColor: ['#ff9999', '#66b3ff', '#99ff99', '#ffcc99', '#c2c2f0', '#ffb3e6'],
-        hoverBackgroundColor: ['#ff9999', '#66b3ff', '#99ff99', '#ffcc99', '#c2c2f0', '#ffb3e6'],
+        label: 'Age Distribution',
+        data: [15, 40, 30, 15],
+        backgroundColor: ['#ff9999', '#66b3ff', '#99ff99', '#ffcc99'],
+        hoverBackgroundColor: ['#ff9999', '#66b3ff', '#99ff99', '#ffcc99'],
       },
     ],
   },
@@ -85,6 +80,7 @@ const Dashboard = () => {
           <div style={styles.headerContent}>
             <h1 style={styles.header}>Barangay Sabang Dashboard Analytics</h1>
           </div>
+          </div>
           <div style={styles.miniCalendar}>
             <DatePicker
               selected={selectedYear}
@@ -95,7 +91,7 @@ const Dashboard = () => {
               calendarClassName="custom-datepicker"
             />
           </div>
-        </div>
+        
 
         <div style={styles.statContainer}>
           <div style={{ ...styles.statBox, backgroundColor: '#ffcccc' }}>
@@ -113,30 +109,37 @@ const Dashboard = () => {
             <h2>100</h2>
             <p>Employment</p>
           </div>
-          <div style={{ ...styles.statBox, backgroundColor: '#ffffe0' }}>
-            <FontAwesomeIcon icon={faHeart} style={styles.icon} />
-            <h2>100</h2>
-            <p>Civil Status</p>
-          </div>
-          <div style={{ ...styles.statBox, backgroundColor: '#98ff98' }}>
-            <FontAwesomeIcon icon={faFileAlt} style={styles.icon} />
-            <h2>170</h2>
-            <p>Barangay Certificate</p>
-          </div>
-          <div style={{ ...styles.statBox, backgroundColor: '#ffeb99' }}>
-            <FontAwesomeIcon icon={faBriefcase} style={styles.icon} />
-            <h2>21</h2>
-            <p>Barangay Officials</p>
-          </div>
         </div>
 
-        <div style={styles.chartContainer}>
-          <div style={styles.chartBox}><Doughnut data={data.population} /></div>
-          <div style={styles.chartBox}><Doughnut data={data.Voters} /></div>
-          <div style={styles.chartBox}><Doughnut data={data.Employ} /></div>
-          <div style={styles.chartBox}><Doughnut data={data.CivilStatus} /></div>
-          <div style={styles.chartBox}><Doughnut data={data.Certificate} /></div>
-          <div style={styles.chartBox}><Doughnut data={data.Officers} /></div>
+        {/* Pie Charts Row */}
+        <div style={styles.pieRow}>
+          <div style={styles.chartBox}><Pie data={data.population} /></div>
+          <div style={styles.chartBox}><Pie data={data.Voters} /></div>
+          <div style={styles.chartBox}><Pie data={data.Employ} /></div>
+        </div>
+
+        {/* Full-width Age Bar Chart at the bottom */}
+        <div style={styles.barContainer}>
+        <Bar
+          data={data.Age}
+          options={{
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { position: 'bottom' },
+            },
+            layout: {
+              padding: 0,
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: { stepSize: 10 },
+      },
+    },
+  }}
+/>
+
         </div>
       </div>
     </>
@@ -148,7 +151,7 @@ const styles = {
     position: 'relative',
     padding: '20px',
     textAlign: 'center',
-    marginLeft: '250px', // Offset to not overlap the sidebar
+    marginLeft: '250px',
   },
   headerWrapper: {
     display: 'flex',
@@ -164,15 +167,15 @@ const styles = {
     fontSize: '60px',
     fontWeight: 'bold',
     margin: 0,
-    marginTop: '90px',
+    marginTop: '200px',
   },
   miniCalendar: {
     backgroundColor: 'lightgray',
     padding: '5px 10px',
     borderRadius: '8px',
     boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
-    marginTop: '100px',
-    marginRight: '30px',
+    marginTop: '-111px',      
+    marginLeft: '1500px',
     width: '180px',
   },
   statContainer: {
@@ -183,7 +186,7 @@ const styles = {
     marginBottom: '50px',
   },
   statBox: {
-    width: '180px',
+    width: '350px',
     borderRadius: '10px',
     padding: '20px',
     boxShadow: '0 2px 10px rgba(0,0,0,0.3)',
@@ -193,13 +196,13 @@ const styles = {
     fontSize: '50px',
     marginBottom: '10px',
   },
-  chartContainer: {
+  pieRow: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     flexWrap: 'wrap',
     gap: '30px',
-    marginBottom: '50px',
+    marginBottom: '30px',
   },
   chartBox: {
     width: '250px',
@@ -207,6 +210,15 @@ const styles = {
     borderRadius: '10px',
     padding: '20px',
     boxShadow: '0 2px 10px rgba(0,0,0,0.2)',
+  },
+  barContainer: {
+    width: '70%',
+    height: '200px',
+    backgroundColor: '#f9f9f9',
+    borderRadius: '10px',
+    padding: '20px',
+    boxShadow: '0 2px 10px rgba(0,0,0,0.2)',
+    marginLeft: '230px',
   },
 };
 
