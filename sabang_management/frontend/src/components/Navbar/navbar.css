@@ -106,43 +106,164 @@
           }
       }
       
-      @media (max-width: 480px) {
-          .nav-link {
-              font-size: 0.9rem;
-          }
-      
-          .btn {
-              font-size: 5px; 
-          }
-      }
-      .nav-container {
+      .navbar {
+        background: #708090;
+        color: #f1f1f1;
+        padding: 15px;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000000;
+    }
+    
+    .nav-container {
         display: flex;
         justify-content: space-between;
         align-items: center;
-      }
-      
-      .nav-menu {
+        width: 95%;
+        padding: 0 20px; 
+    }
+    
+    .nav-menu {
+        list-style: none;
+        background: #708090;
+        display: flex;
+        gap: 20px;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .nav-item {
+        padding: 10px;
+    }
+    
+    .nav-link {
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+    }
+    
+    .nav-link:hover {
+        color: #1c70e6;
+    }
+    
+    body {
+        margin: 0;
+        padding-top: 60px;
+    }
+    
+    .btn {
+        margin-top: 8px;
+        padding: 5px;
+        font-size: 13px;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+    }
+    
+    .nav-logo {
+        font-size: 30px;
+    }
+    
+    .barangay-image {
+        margin: 0;
+        padding: 0; 
+        display: inline-block;
+        width: 60px; 
+        height: 60px;
+        border-radius: 50%;
+    }
+    
+    .Barangay {
+        margin: 0;
+        padding: 0; 
+        font-size: 35px; 
+        color: lightblue; 
+        font-weight: bold; 
+    }
+    
+    .right-nav {
+        width: 300px;
+    }
+    
+    @media (max-width: 768px) {
+        .nav-container {
+            flex-direction: column; 
+            align-items: flex-start; 
+        }
+    
+        .nav-menu {
+            flex-direction: column;
+            gap: 5px; 
+            width: 100%; /* Make menu full width */
+            display: none; /* Hide menu by default */
+        }
+    
+        .nav-menu.active {
+            display: flex; /* Show menu when active */
+        }
+    
+        .nav-logo {
+            font-size: 24px;
+        }
+    
+        .Barangay {
+            font-size: 20px;
+        }
+    
+        .right-nav {
+            width: 100%; 
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .nav-link {
+            font-size: 0.9rem;
+        }
+    
+        .btn {
+            font-size: 5px; 
+        }
+    
+        .nav-logo {
+            font-size: 20px; /* Smaller logo font size */
+        }
+    
+        .Barangay {
+            font-size: 18px; /* Smaller Barangay font size */
+        }
+    }
+    
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .nav-menu {
         display: flex;
         align-items: center;
         list-style: none;
         margin: 0;
         padding: 0;
         gap: 1rem;
-      }
-      
-      .nav-item {
+    }
+    
+    .nav-item {
         position: relative;
-      }
-      
-      .dropdown-toggle {
+    }
+    
+    .dropdown-toggle {
         background: none;
         border: none;
         color: white;
         cursor: pointer;
         font: inherit;
-      }
-      
-      .dropdown-menu {
+    }
+    
+    .dropdown-menu {
         position: absolute;
         right: 0;
         top: 100%;
@@ -154,18 +275,20 @@
         margin-top: 8px;
         list-style: none;
         box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      }
-      
-      .dropdown-item {
+    }
+    
+    .dropdown-item {
         padding: 10px 15px;
         color: white;
         text-decoration: none;
         display: block;
         background-color: #333;
         border-bottom: 1px solid #444;
-      }
-      
-      .dropdown-item:hover {
+    }
+    
+    .dropdown-item:hover {
         background-color: #444;
-      }
-      
+    }
+    
+    /* Hamburger Menu Styles */
+    

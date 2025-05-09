@@ -2,6 +2,7 @@ import "../styles/Auth.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import assets from "../assets/Icon.jfif";
+import homeIcon from "../assets/HOme.png"; 
 
 const Login = () => {
   const navigate = useNavigate();
@@ -38,8 +39,27 @@ const Login = () => {
       alignItems: "center",
     }}>
       
-      <form className="auth-form" onSubmit={handleLogin}>
-        <h2>Login</h2>
+      <form 
+        className="auth-form" 
+        onSubmit={handleLogin}
+        style={{ position: "relative" }} // relative for absolute positioning inside
+      >
+        {/* Home Icon inside form */}
+        <img 
+          src={homeIcon} 
+          alt="Home" 
+          style={{
+            position: "absolute",
+            top: "15px",
+            left: "5px",
+            cursor: "pointer",
+            width: "50px",
+            height: "50px",
+            zIndex: 2
+          }} 
+          onClick={() => navigate("/")}
+        />
+        <h2 style={{ textAlign: "center" }}>Login</h2>
         <input
           type="email"
           placeholder="Email"
@@ -62,3 +82,4 @@ const Login = () => {
 };
 
 export default Login;
+
