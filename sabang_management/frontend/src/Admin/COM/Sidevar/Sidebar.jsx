@@ -25,6 +25,8 @@ const Sidebar = () => {
           <li><Link to="/barangaycert"><FaCertificate /> Barangay Certificate</Link></li>
           <li><Link to="/ResidentInformationTable"><FaUsers /> Resident Information</Link></li>
           <li><Link to="/official"><FaUserTie /> Barangay Officer</Link></li>
+          <li><Link to="/addCertificate"><FaUserTie /> Add Certificate</Link></li>
+      
         </ul>
         <div className="logout-btn-container">
           <button className="logout-btn" onClick={() => setShowLogoutModal(true)}>
