@@ -3,7 +3,7 @@ import Sidebar from '../COM/Sidevar/Sidebar';
 
 function AddCertificateModule() {
   const [certificates, setCertificates] = useState([]);
-  const [form, setForm] = useState({ title: '', description: '' });
+  const [form, setForm] = useState({ title: '' });
   const [fieldInput, setFieldInput] = useState({ label: '', type: 'text' });
   const [fields, setFields] = useState([]);
   const [responses, setResponses] = useState({});
@@ -25,7 +25,7 @@ function AddCertificateModule() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!form.title || !form.description) return;
+    if (!form.title) return;
 
     const newCert = {
       ...form,
@@ -33,7 +33,7 @@ function AddCertificateModule() {
     };
 
     setCertificates([...certificates, newCert]);
-    setForm({ title: '', description: '' });
+    setForm({ title: '' });
     setFields([]);
   };
 
@@ -47,7 +47,6 @@ function AddCertificateModule() {
     });
   };
 
-  // Handle file input change for valid ID
   const handleFileChange = (e, certTitle) => {
     const file = e.target.files[0];
     setResponses({
@@ -61,7 +60,6 @@ function AddCertificateModule() {
 
   const handleUserSubmit = (certTitle) => {
     const data = responses[certTitle];
-    // You can send 'data' to your backend here
     alert(`Submitted for "${certTitle}":\n` + JSON.stringify(
       {
         ...data,
@@ -72,7 +70,6 @@ function AddCertificateModule() {
   return (
     <>
       <style>{`
-        /* Container for entire module */
         .module-container {
           max-width: 900px;
           margin: 40px auto;
@@ -84,27 +81,25 @@ function AddCertificateModule() {
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* Headings */
         .module-container h1 {
           font-size: 2.2rem;
-          color: #1e40af; /* blue-800 */
+          color: #1e40af;
           margin-bottom: 25px;
         }
 
         .module-container h3 {
           font-size: 1.7rem;
-          color: #374151; /* gray-700 */
+          color: #374151;
           margin-bottom: 20px;
         }
 
         .module-container h4 {
           font-size: 1.25rem;
           font-weight: 700;
-          color: #2563eb; /* blue-600 */
+          color: #2563eb;
           margin-bottom: 8px;
         }
 
-        /* Forms */
         form {
           margin-bottom: 35px;
         }
@@ -113,13 +108,12 @@ function AddCertificateModule() {
         form input[type="number"],
         form input[type="date"],
         form input[type="file"],
-        form textarea,
         form select {
           width: 100%;
           padding: 12px 15px;
           margin-top: 8px;
           margin-bottom: 15px;
-          border: 1.5px solid #d1d5db; /* gray-300 */
+          border: 1.5px solid #d1d5db;
           border-radius: 8px;
           font-size: 1rem;
           transition: border-color 0.2s ease-in-out;
@@ -130,13 +124,11 @@ function AddCertificateModule() {
         form input[type="number"]:focus,
         form input[type="date"]:focus,
         form input[type="file"]:focus,
-        form textarea:focus,
         form select:focus {
-          border-color: #2563eb; /* blue-600 */
+          border-color: #2563eb;
           outline: none;
         }
 
-        /* Buttons */
         button {
           background-color: #2563eb;
           color: white;
@@ -152,17 +144,15 @@ function AddCertificateModule() {
           background-color: #1e40af;
         }
 
-        /* Add Field button */
         .add-field-btn {
-          background-color: #16a34a; /* green-600 */
+          background-color: #16a34a;
           padding: 12px 20px;
         }
 
         .add-field-btn:hover {
-          background-color: #15803d; /* green-700 */
+          background-color: #15803d;
         }
 
-        /* Form groups with label and inputs inline */
         .flex-row {
           display: flex;
           gap: 15px;
@@ -175,28 +165,25 @@ function AddCertificateModule() {
           margin-bottom: 0;
         }
 
-        /* User forms container */
         .user-form {
-          background: #f9fafb; /* gray-50 */
+          background: #f9fafb;
           border: 1.5px solid #d1d5db;
           border-radius: 12px;
           padding: 20px 25px;
           margin-bottom: 30px;
         }
 
-        /* Label above file input */
         label.file-label {
           font-size: 0.9rem;
           font-weight: 600;
-          color: #4b5563; /* gray-600 */
+          color: #4b5563;
           margin-bottom: 6px;
           display: block;
         }
 
-        /* Smaller text for field list */
         .fields-list {
           font-size: 0.85rem;
-          color: #6b7280; /* gray-500 */
+          color: #6b7280;
           margin-top: -10px;
           margin-bottom: 15px;
         }
@@ -212,12 +199,6 @@ function AddCertificateModule() {
             name="title"
             placeholder="Certificate Title"
             value={form.title}
-            onChange={handleChange}
-          />
-          <textarea
-            name="description"
-            placeholder="Description / Requirements"
-            value={form.description}
             onChange={handleChange}
           />
 
@@ -255,7 +236,6 @@ function AddCertificateModule() {
         {certificates.map((cert, index) => (
           <div key={index} className="user-form">
             <h4>{cert.title}</h4>
-            <p>{cert.description}</p>
 
             <form onSubmit={(e) => {
                 e.preventDefault();
