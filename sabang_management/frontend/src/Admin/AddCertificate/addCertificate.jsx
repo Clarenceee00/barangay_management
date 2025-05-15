@@ -85,9 +85,9 @@ function AddCertificateModule() {
         }
 
         /* Headings */
-        .module-container h2 {
+        .module-container h1 {
           font-size: 2.2rem;
-          
+          color: #1e40af; /* blue-800 */
           margin-bottom: 25px;
         }
 
@@ -204,7 +204,7 @@ function AddCertificateModule() {
 
       <div className="module-container">
         <Sidebar />
-       <h2 style={{ color: ' #1e40af' }}>Create Certificate Form</h2>
+        <h1>Create Certificate Form</h1>
 
         <form onSubmit={handleSubmit} className="mb-8">
           <input
