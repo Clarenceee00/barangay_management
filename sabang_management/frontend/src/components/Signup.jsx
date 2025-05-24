@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import "../styles/Auth.css"; 
+import "../styles/Sigup.css"; 
 import { useState } from "react";
 import axios from "axios";
 
@@ -46,20 +46,7 @@ const Signup = () => {
   };
 
   return (
-    <div style={{
-      position: "absolute",
-      top: 0,
-      left: 0,
-      width: "100%",
-      height: "100vh",
-      backgroundImage: "url('src/assets/Barangay.jpg')",
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-    }}>
+    <div className="signup-container">
       <form className="auth-form" onSubmit={handleSubmit}>
         <h2>Sign Up</h2>
         <input type="text" name="username" placeholder="Username" value={formData.username} onChange={handleChange} />

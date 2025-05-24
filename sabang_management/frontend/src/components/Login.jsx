@@ -1,21 +1,25 @@
-import "../styles/Auth.css"; 
+import "../styles/Auth.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import assets from "../assets/Icon.jfif";
-import homeIcon from "../assets/HOme.png"; 
+import BarangayImage from "../assets/Barangay.jpg"; // Make sure path is correct
 
 const Login = () => {
   const navigate = useNavigate();
   const [credentials, setCredentials] = useState({ email: "", password: "" });
 
   const handleLogin = (event) => {
-    event.preventDefault(); // Prevent page reload
+    event.preventDefault();
 
-    // Dummy authentication logic (replace with real validation as needed)
-    if (credentials.email === "Pentavision@gmail.com" && credentials.password === "password") {
+    if (
+      credentials.email === "Pentavision@gmail.com" &&
+      credentials.password === "password"
+    ) {
       localStorage.setItem("isAuthenticated", "true");
       navigate("/home");
-    } else if (credentials.email === "admin@gmail.com" && credentials.password === "admin123") {
+    } else if (
+      credentials.email === "admin@gmail.com" &&
+      credentials.password === "admin123"
+    ) {
       localStorage.setItem("isAuthenticated", "true");
       navigate("/dashboard");
     } else {
@@ -24,62 +28,39 @@ const Login = () => {
   };
 
   return (
-    <div style={{
-      position: "absolute",
-      top: 0,
-      left: 0,
-      width: "100%",
-      height: "100vh",
-      backgroundImage: "url('src/assets/Barangay.jpg')",
-      backgroundSize: "100%",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-    }}>
-      
-      <form 
-        className="auth-form" 
-        onSubmit={handleLogin}
-        style={{ position: "relative" }} // relative for absolute positioning inside
-      >
-        {/* Home Icon inside form */}
-        <img 
-          src={homeIcon} 
-          alt="Home" 
-          style={{
-            position: "absolute",
-            top: "15px",
-            left: "5px",
-            cursor: "pointer",
-            width: "50px",
-            height: "50px",
-            zIndex: 2
-          }} 
-          onClick={() => navigate("/")}
-        />
-        <h2 style={{ textAlign: "center" }}>Login</h2>
-        <input
-          type="email"
-          placeholder="Email"
-          value={credentials.email}
-          onChange={(e) => setCredentials({ ...credentials, email: e.target.value })}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={credentials.password}
-          onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
-          required
-        />
-        <button type="submit">Login</button>
-        <p>Do you not have an account yet? <Link to="/signup">Sign up</Link></p>
-      </form>
+    <div className="login-container">
+      <div className="login-card">
+        <div className="login-image" style={{ backgroundImage: `url(${BarangayImage})` }}></div>
+
+        <div className="login-form">
+          <h1 className="logo">Login</h1>
+          <p className="subtitle">Sign into your account</p>
+          <form onSubmit={handleLogin}>
+            <input
+              type="email"
+              placeholder="Email-address"
+              value={credentials.email}
+              onChange={(e) => setCredentials({ ...credentials, email: e.target.value })}
+              required
+            />
+            <input
+              type="password"
+              placeholder="********"
+              value={credentials.password}
+              onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
+              required
+            />
+            <button type="submit">Login</button>
+          </form>
+          <div className="extras">
+            <p>
+              Don't have an account? <Link to="/signup">Register here</Link>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
 
 export default Login;
-
